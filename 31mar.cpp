@@ -1,8 +1,8 @@
-#include <iostream>
-#include <math.h>
-using namespace std;
-int main()
-{
+// #include <iostream>
+// #include <math.h>
+// using namespace std;
+// int main()
+// {
     // int x = 10;
     // cout<<"The value of x"<<x<<endl;
 
@@ -63,5 +63,9 @@ int main()
     // cout << "The value of r1 = \n"<< r12 << endl;
     // cout << "The value of r2 = \n"<< r22 << endl;
 
-    return 0;
-}
+
+
+
+
+//     return 0;
+// }
