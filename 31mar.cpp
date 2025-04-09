@@ -246,8 +246,7 @@
 //     }
 //     return 0;
 // }
-
-
+// 09-04-2025
 
 // Write a program take three variable of float type name phy,che,math and show the resultm on the following condition marks should be 0-100 user can pass on getting marks grater than = 33 
 // if user can pass show there division lessthan= 45 , less then 60 , grater then =60 first division, second division, third division. user can pass only if they will pass all the subject  , if user fail show there fail subject with marks.
