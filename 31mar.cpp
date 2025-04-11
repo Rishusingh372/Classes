@@ -247,35 +247,47 @@
 //     return 0;
 // }
 // 09-04-2025
-
+// Question on %
 // Write a program take three variable of float type name phy,che,math and show the resultm on the following condition marks should be 0-100 user can pass on getting marks grater than = 33 
 // if user can pass show there division lessthan= 45 , less then 60 , grater then =60 first division, second division, third division. user can pass only if they will pass all the subject  , if user fail show there fail subject with marks.
 
-# include<iostream>
+// # include<iostream>
+// using namespace std;
+// int main(){
+//     float phy,che,math;
+//     cout<<"Enter your marks in Physics, Chemistry and Mathematics: ";
+//     cin>>phy>>che>>math;
+//     if(phy<0 || che<0 || math<0 || phy>100 || che>100 || math>100){
+//         cout<<"Invalid marks entered. Please enter marks between 0 and 100."<<endl;
+//     }
+//     else if(phy<33 || che<33 || math<33){
+//         cout<<"You have failed in the following subjects: "<<endl;
+//         if(phy<33) cout<<"Physics: "<<phy<<endl;
+//         if(che<33) cout<<"Chemistry: "<<che<<endl;
+//         if(math<33) cout<<"Mathematics: "<<math<<endl;
+//     }
+//     else{
+//         cout<<"You have passed all subjects."<<endl;
+//         if(phy>=60 && che>=60 && math>=60){
+//             cout<<"Your division is First Division."<<endl;
+//         }
+//         else if((phy>=45 && phy<60) && (che>=45 && che<60) && (math>=45 && math<60)){
+//             cout<<"Your division is Second Division."<<endl;
+//         }
+//         else{
+//             cout<<"Your division is Third Division."<<endl;
+//         }
+//     }
+// }
+
+
+// make a program bile mangemant systm any hotel or resturant 10-04-2025
+
+#include <iostream>
 using namespace std;
 int main(){
-    float phy,che,math;
-    cout<<"Enter your marks in Physics, Chemistry and Mathematics: ";
-    cin>>phy>>che>>math;
-    if(phy<0 || che<0 || math<0 || phy>100 || che>100 || math>100){
-        cout<<"Invalid marks entered. Please enter marks between 0 and 100."<<endl;
-    }
-    else if(phy<33 || che<33 || math<33){
-        cout<<"You have failed in the following subjects: "<<endl;
-        if(phy<33) cout<<"Physics: "<<phy<<endl;
-        if(che<33) cout<<"Chemistry: "<<che<<endl;
-        if(math<33) cout<<"Mathematics: "<<math<<endl;
-    }
-    else{
-        cout<<"You have passed all subjects."<<endl;
-        if(phy>=60 && che>=60 && math>=60){
-            cout<<"Your division is First Division."<<endl;
-        }
-        else if((phy>=45 && phy<60) && (che>=45 && che<60) && (math>=45 && math<60)){
-            cout<<"Your division is Second Division."<<endl;
-        }
-        else{
-            cout<<"Your division is Third Division."<<endl;
-        }
-    }
+    int a=12,b=13,c;
+    c=a&b;
+    cout<<c<<endl;
+    return 0;
 }
