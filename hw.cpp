@@ -64,3 +64,4 @@
 // wap to print the series 10,9,8,7....
 // wap to find sum of input digit 
 //wap a prob to chack the given num is perfect or not
+// 
