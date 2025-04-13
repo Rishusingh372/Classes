@@ -53,6 +53,15 @@
 // }
 
 // wap to find factoreal of a num 
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int num;
+//     long long factorial = 1; // Use long long to handle large numbers
+//     cout << "Enter a positive integer: ";
+//     cin >> num;
+//     if (num < 0) {
+//         cout << "Error! Factorial of a negative number doesn't exist." << endl;
 // wap to sum of factorial of num
 // wap to chack num is palindorm or not 
 // wap to find the num is armstrom or not

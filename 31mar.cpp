@@ -283,11 +283,83 @@
 
 // make a program bile mangemant systm any hotel or resturant 10-04-2025
 
-#include <iostream>
-using namespace std;
-int main(){
-    int a=12,b=13,c;
-    c=a&b;
-    cout<<c<<endl;
-    return 0;
-}
+// #include <iostream>
+// using namespace std;
+// int main(){
+//     int a=12,b=13,c;
+//     c=a&b;
+//     cout<<c<<endl;
+//     return 0;
+// }
+
+// nastage loop
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int i=1;
+//     while(i<=5){
+//         cout<<"this is outer while loop "<<endl;
+//         int j=1;
+//         while(j<=5){
+//             cout<<"this is inner while loop "<<endl;
+//             j++;
+//         }
+//         i++;
+//     }
+
+//     return 0;
+// }
+
+// wap to print 
+// 55555
+// 44444
+// 33333
+// 22222
+//// 11111
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int i=1;
+//     while(i<=5){
+//         int j=1;
+//         while(j<=5){
+//             cout<<6-i;
+//             j++;
+//         }
+//         cout<<endl;
+//         i++;
+//     }
+//     return 0;
+// }
+
+// wap to program to print
+// 1
+// 12
+// 123
+// 1234
+// 12345
+
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int i=1;
+//     while(i<=5){
+//         int j=1;
+//         while(j<=i){
+//             cout<<j;
+//             j++;
+
+//         }
+//         cout<<endl;
+//         i++;
+
+//     }
+//     return 0;
+// }
+// **
+// ***
+// ****
+// *****
