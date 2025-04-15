@@ -1,28 +1,20 @@
 #include <iostream>
-// using namespace std;
-// int main() {
-//     int n;
-//     cout << "Enter the number of rows: ";
-//     cin >> n;
-//     // Upper part of the pattern
-//     for (int i = 1; i <= n; ++i) {
-//         for (int j = i; j < n; ++j) {
-//             cout << " ";
-//         }
-//         for (int j = 1; j <= (2 * i - 1); ++j) {
-//             cout << "*"; // Print stars
-//         }
-//         cout << endl; // Move to the next line after each row
-//     }
-//     // Lower part of the pattern
-//     for (int i = n - 1; i >= 1; --i) {
-//         for (int j = n; j > i; --j) {
-//             cout << " ";
-//         }
-//         for (int j = 1; j <= (2 * i - 1); ++j) {
-//             cout << "*"; // Print stars
-//         }
-//         cout << endl; // Move to the next line after each row
-//     }
-//     return 0;
-// }
+using namespace std;
+int main() {
+    int num, count = 0;
+    cout << "Enter a number: ";
+    cin >> num;
+    for (int i = 1; i <= num; ++i) {
+        if (num % i == 0) {
+            count++; // Increment count if i is a factor of num
+        }
+    }
+    if (count == 4) {
+        cout << num << " has exactly four factors." << endl;
+    } else if (count == 2) {
+        cout << num << " is a prime number." << endl;
+    } else {
+        cout << num << " has more than four factors." << endl;
+    }
+    return 0;
+}

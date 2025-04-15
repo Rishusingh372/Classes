@@ -405,30 +405,95 @@
 
 // make a program taking two input from user n1,n2 and when the user input the n2 find out all the palandom number after n1 and numbers of n2
 
-   # include<iostream>
-    using namespace std;
-    int main() {
-        int n1,n2,i,c=0;
-        cout<<"Enter the first number: ";
-        cin>>n1;
-        cout<<"Enter the second number: ";
-        cin>>n2;    
-        for(i=n1;i<=n2;i++)
-        {
-            int num=i;
-            int rev=0;
-            while(num!=0)
-            {
-                rev=rev*10+num%10;
-                num=num/10;
-            }
-            if(i==rev)
-            {
-                cout<<i<<" ";
-                c++;
-            }
+//    # include<iostream>
+//     using namespace std;
+//     int main() {
+//         int n1,n2,i,c=0;
+//         cout<<"Enter the first number: ";
+//         cin>>n1;
+//         cout<<"Enter the second number: ";
+//         cin>>n2;    
+//         for(i=n1;i<=n2;i++)
+//         {
+//             int num=i;
+//             int rev=0;
+//             while(num!=0)
+//             {
+//                 rev=rev*10+num%10;
+//                 num=num/10;
+//             }
+//             if(i==rev)
+//             {
+//                 cout<<i<<" ";
+//                 c++;
+//             }
+//         }
+//         cout<<endl;
+//         cout<<"Total palindrom numbers are: "<<c<<endl;
+//         return 0;
+//         }
+
+// # include<iostream>
+// using namespace std;
+// int main(){
+//     int n1,n2, i=1;
+//     int n3=n1+1;
+
+//     cin>>n1>>n2;
+//     for(i=1; i<=n2; i++){
+//       int temp =n3;
+//       int rev=0;
+//         if(temp!=0){
+//             rev=rev*10+temp%10;
+//             temp=temp/10;
+//         }
+//         if(n3==rev){
+//             cout<<rev<<endl;
+//             i++;
+//         }
+//          n3+=1;
+//     }
+
+  
+//    return 0;
+// }
+
+
+
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int num, count = 0;
+//     cout << "Enter a number: ";
+//     cin >> num;
+//     for (int i = 1; i <= num; ++i) {
+//         if (num % i == 0) {
+//             count++; // Increment count if i is a factor of num
+//         }
+//     }
+//     if (count == 2) {
+//         cout << num << " is a prime number." << endl;
+//     } else {
+//         cout << num << " is not prime number." << endl;
+//     }
+//     return 0;
+// }
+
+
+// print right angle trangle
+
+# include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter the number"<<endl;
+    cin>>n;
+    for(int i=1; i<=n; i++){
+        for(int j=1; j<=i; j++){
+            cout<< j;
         }
         cout<<endl;
-        cout<<"Total palindrom numbers are: "<<c<<endl;
-        return 0;
-        }
+    }
+    return 0;
+}
