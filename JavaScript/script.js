@@ -107,11 +107,69 @@
 
 // wap to take input from when the user enter 0 then loop will be break
 
-var a = 1;
-do {
-    var num = parseInt(prompt("Enter a number"));
-    document.write(a + "<br>");
-    a++;
-} while (num != 0);
+// var a = 1;
+// do {
+//     var num = parseInt(prompt("Enter a number"));
+//     document.write(a + "<br>");
+//     a++;
+// } while (num != 0);
+
+// take a number input from user and  print the table of that number using while loop
+
+// var num = parseInt(prompt("Enter a number"));
+// var i = 1;
+// while (i <= 10) {
+//     document.write(num + " * " + i + " = " + num * i +
+//         "<br>");
+//     i++;
+// }
+
+// -----------------> For  Loop <------------------
+
+// for(let a=1 ; a<=10 ; a++){
+//     document.write(a + "<br>");
+// }
 
 
+
+// for (let i = 20; i >= 10; i--) {
+//     document.write(i + "<br>");
+// }
+
+// let num = parseInt(prompt("Enter a number"));
+// let mul = num * num;
+// document.write("Table of " + num + "<br>");
+// for (let i = 10; i >= 1; i--) {
+//     document.write(mul + " * " + i + " = " + mul * i ,"<br>");
+// }
+
+// wap to print only even numbers between 1 to 15
+// for(let i=1; i<=15; i++){
+//     if(i%2==0){
+//         document.write(i + "<br>");
+//     }
+// }
+
+
+// wap tp take input from user and check it is even and odd if number is even then  print the table of that number if number is odd then print the que of that number
+
+// var num = parseInt(prompt("Enter a number"));
+// if(num%2==0){
+//     document.write("Table of " + num + "<br>");
+//     for(let i=1; i<=10; i++){
+//         document.write( num*i + "<br>");
+//     }
+// }
+// else {
+//     document.write(num*num*num + "<br>");
+// }
+
+
+// -----------------> Nasted For  Loop <------------------
+for(let i=1; i<=10; i++){{
+    for(let j=2; j<=3; j++){
+        document.write(i*j + " ");
+    }
+    document.write("<br>");
+}
+}
