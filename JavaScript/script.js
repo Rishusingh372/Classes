@@ -166,10 +166,41 @@
 
 
 // -----------------> Nasted For  Loop <------------------
-for(let i=1; i<=10; i++){{
-    for(let j=2; j<=3; j++){
-        document.write(i*j + " ");
+
+
+// for(let i=1; i<=10; i++){{
+//     for(let j=2; j<=3; j++){
+//         document.write(i*j + " ");
+//     }
+//     document.write("<br>");
+// }
+// }
+
+// wap to print the right triangle pattern using nested for loop
+
+// for(let i=5; i<=5; i++){
+//     for(let j=1; j<=i; j++){
+//         document.write("*");
+//     }
+//     document.write("<br>");
+// }
+
+// for(let i=5; i>=1; i--){
+//     for(let j=1; j<=i; j++){
+//         document.write("*");
+//     }
+//     document.write("<br>");
+// }
+
+
+for(let i=1; i<=5; i++){
+    for(let j=1; j<=5; j++){
+        if(i==1 || j==1 || i==5 || j==5){
+        document.write("*");
+        }
+        else{
+            document.write("&nbsp&nbsp");
+        }
     }
     document.write("<br>");
-}
 }
