@@ -193,14 +193,43 @@
 // }
 
 
-for(let i=1; i<=5; i++){
-    for(let j=1; j<=5; j++){
-        if(i==1 || j==1 || i==5 || j==5){
-        document.write("*");
-        }
-        else{
-            document.write("&nbsp&nbsp");
-        }
-    }
-    document.write("<br>");
-}
+// for(let i=1; i<=5; i++){
+//     for(let j=1; j<=5; j++){
+//         if(i==1 || j==1 || i==5 || j==5){
+//         document.write("*");
+//         }
+//         else{
+//             document.write("&nbsp&nbsp");
+//         }
+//     }
+//     document.write("<br>");
+// }
+
+
+// -----------------> Nasted For  Loop <------------------
+
+// let ar = [];
+// for (let i = 0; i < 5; i++) {
+//     ar[i] = prompt("Enter the element of array");
+// }
+// console.log(ar);
+
+
+// -----------------> Array <------------------
+
+// wap to take input from user to print last digit of that number 
+
+// var num = parseInt(prompt("Enter a number"));
+// var lastDigit = num % 10;
+// document.write("Last digit of number is: " + lastDigit);
+
+// wap to take 10 integar input from user and store in arr and find sum of all the element of that array
+
+// var arr = [];
+// var sum = 0;
+// for (let i = 0; i < 10; i++) {
+//     arr[i] = parseInt(prompt("Enter the element of array"));
+//     sum += arr[i];
+// }
+
+
