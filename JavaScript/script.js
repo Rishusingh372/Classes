@@ -219,17 +219,22 @@
 
 // wap to take input from user to print last digit of that number 
 
-// var num = parseInt(prompt("Enter a number"));
-// var lastDigit = num % 10;
-// document.write("Last digit of number is: " + lastDigit);
+var num = parseInt(prompt("Enter a number"));
+let num
+while(num>=10){
+    num = parseInt(num/10);
+}
+console.log(num);
+var lastDigit = num % 10;
+document.write("Last digit of number is: " + lastDigit);
 
 // wap to take 10 integar input from user and store in arr and find sum of all the element of that array
 
-// var arr = [];
-// var sum = 0;
-// for (let i = 0; i < 10; i++) {
-//     arr[i] = parseInt(prompt("Enter the element of array"));
-//     sum += arr[i];
-// }
+var arr = [];
+var sum = 0;
+for (let i = 0; i < 10; i++) {
+    arr[i] = parseInt(prompt("Enter the element of array"));
+    sum += arr[i];
+}
 
 
