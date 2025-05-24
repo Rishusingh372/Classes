@@ -70,17 +70,61 @@
 
 
 // find fist key  of object
-let ob ={
-    name:"Rishu",
-    Age:24,
-    contact:9013,
-    location:"Bhopal",
-    hobbies:["cricket", "coding", "reading"],
-    fname:"Arjun",
-    lname:"Rai",
-    state:"Madhya Pradesh",
-    country:"India",
-    id:1,
-}
 
-console.log(Object.keys(ob)[0]);
+// let ob ={
+//     name:"Rishu",
+//     Age:24,
+//     contact:9013,
+//     location:"Bhopal",
+//     hobbies:["cricket", "coding", "reading"],
+//     fname:"Arjun",
+//     lname:"Rai",
+//     state:"Madhya Pradesh",
+//     country:"India",
+//     id:1,
+// }
+
+// console.log(Object.keys(ob)[0]);
+
+
+
+// =================Function On Js =================
+
+// -----------------------------------------------------without arguments and no return type
+
+// function greet() {
+//     console.log("Hello, welcome to the JavaScript world!");
+// }
+//  greet();
+
+// ---------------------------------------------------- with arguments and no return type
+
+// function greet(name) {
+//     console.log(name);
+// }
+// greet("Rishu");
+
+
+// wap to add two numbers using function and nuber taken from the user
+
+
+
+// function add(a, b) { 
+//     let sum = a + b;
+//     console.log(sum); 
+// }
+//  a = parseInt(prompt("Enter first number"));
+//  b = parseInt(prompt("Enter second number"));
+// add(a,b);
+
+// ===============================================  with arguments and with return type
+
+// function Demo(a){
+//     return a+a;
+
+// }
+// Demo(10);
+// var result = Demo(10);
+// console.log(result);
+
+// ===============================================  without arguments and with return type
