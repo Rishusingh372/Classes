@@ -316,4 +316,225 @@
 
 // ================================================
 
+//    Class Notes 23 and 24 MAY
+// //Taking Nothing Returning Something
+
+
+// //Taking Nothing Returning Something
+// #include<iostream>
+// using namespace std;
+// //step1:
+// int add();
+// //step2:
+// int add(){
+//     int n1,n2,n3;
+//     cout<<"\n Enter Number 1 : ";
+//     cin>>n1;
+//     cout<<"Enter Number 2 : ";
+//     cin>>n2;
+//     n3=n1+n2;
+//     return n3;    
+// }
+
+// int main(){
+//     cout<<"\n Addition : "<<add();
+//     int r=add();
+//     cout<<"\n Addition : "<<r;
+//     return 0;
+// }
+
+
+// //4. Taking Something and Returning Something
+// Example:
+// int add(int,int)
+
+// int add(int a,int b){//Formal Arguement
+
+// //Perform Operation
+// //Return Result
+
+
+// }
+// ======================
+// //Taking Nothing Returning Something
+// #include<iostream>
+// using namespace std;
+// //step1:
+// int add(int,int);
+// //step2:
+// int add(int n1,int n2){
+//     int n3;
+//     n1=34;
+//     n2=26;
+//     n3=n1+n2;
+//     return n3;    
+// }
+
+// int main(){
+//     int n1,n2;
+//     cout<<"\n Enter Number 1 : ";
+//     cin>>n1;
+//     cout<<"Enter Number 2 : ";
+//     cin>>n2;
+//     int r=add(n1,n2);//Actual Argument
+//     cout<<"\n Addition : "<<r;
+//     return 0;
+// }
+
+// ======================================================
+// Q1. Write a C++ Program to check given Number is Perfect or Not?
+// Enter Any Number :6
+// This Is Perfect Number
+
+// Using
+// 1. Taking Nothing Returning Nothing
+// void isPerfect()
+// 2. Taking Something Returning Nothing
+// void isPerfect(int n)
+// 3. Returning Something Taking Nothing
+// int isPerfect()
+// 4. Taking Something and Returning Something
+// int isPerfect(int n);
+
+// //Taking Nothing Returning nothing
+// #include<iostream>
+// using namespace std;
+// //step1:
+// void isPerfect();
+// //step2:
+// void isPerfect(){
+// int n;
+// cout<<"Enter Any Number : ";
+// cin>>n;//6
+// int sum=0;
+// for(int i=1;i<n;i++){
+// if(n%i==0){
+//     sum=sum+i;//sum=6
+// }    
+// }
+// if(sum==n){
+// cout<<"This is Perfect Number";    
+// }
+// else{
+//     cout<<"This is Not a Perfect Number : ";
+// }
    
+// }
+
+
+// int main(){
+//     isPerfect();//calling
+//     return 0;
+// }
+
+
+// ===============================================================
+// //Taking Something Returning Nothing
+// #include<iostream>
+// using namespace std;
+// //step1:
+// void isPerfect(int n);
+// //step2:
+// void isPerfect(int n){
+
+// int sum=0;
+// for(int i=1;i<n;i++){
+// if(n%i==0){
+//     sum=sum+i;//sum=6
+// }    
+// }
+// if(sum==n){
+// cout<<"This is Perfect Number";    
+// }
+// else{
+//     cout<<"This is Not a Perfect Number : ";
+// }
+   
+// }
+
+
+// int main(){
+//     int n;
+//     cout<<"Enter Any Number : ";
+//     cin>>n;
+//     isPerfect(n);//calling
+//     return 0;
+// }
+
+// =========================================
+// //Taking Nothing Returning Something
+// #include<iostream>
+// using namespace std;
+// //step1:
+// int isPerfect();
+// //step2:
+// int isPerfect(){
+//     int n;
+//     cout<<"Enter Any Number : ";
+//     cin>>n;
+// int sum=0;
+// for(int i=1;i<n;i++){
+// if(n%i==0){
+//     sum=sum+i;//sum=6
+// }    
+// }
+// if(sum==n){
+// return 1;
+// }
+// else{
+// return 0;
+// }
+   
+// }
+
+
+// int main(){
+
+//     int r=isPerfect();//calling
+//     if(r){
+//         cout<<"This is Perfect Number ";
+//     }else{
+//         cout<<"This is Not a Perfect Number ";
+//     }
+//     return 0;
+// }
+
+// =============================================
+// //Taking Something Returning Something
+// #include<iostream>
+// using namespace std;
+// //step1:
+// int isPerfect(int);
+// //step2:
+// int isPerfect(int n){
+
+// int sum=0;
+// for(int i=1;i<n;i++){
+// if(n%i==0){
+//     sum=sum+i;//sum=6
+// }    
+// }
+// if(sum==n){
+// return 1;
+// }
+// else{
+// return 0;
+// }
+   
+// }
+
+
+// int main(){
+//     int n;
+//     cout<<"Enter Any Number : ";
+//     cin>>n;
+//     int r=isPerfect(n);//calling
+//     if(r){
+//         cout<<"This is Perfect Number ";
+//     }else{
+//         cout<<"This is Not a Perfect Number ";
+//     }
+//     return 0;
+// }
+
+// ====================================================================
