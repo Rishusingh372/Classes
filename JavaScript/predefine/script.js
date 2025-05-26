@@ -128,3 +128,60 @@
 // console.log(result);
 
 // ===============================================  without arguments and with return type
+
+
+// 1. Wap to take a input from the user find square of that number then check number is even or odd using function type 1
+
+// function checkSquareAndEvenOdd() {
+//     let num = parseInt(prompt("Enter a number:"));
+//     let square = num * num;
+//     console.log("Square of the number is:", square);
+    
+//     if (num % 2 === 0) {
+//         console.log(num, "is even.");
+//     } else {
+//         console.log(num, "is odd.");
+//     }
+// }
+// checkSquareAndEvenOdd();
+
+
+// 2. Wap to return sum of all number present in array using type 4
+
+// function sumOfArray(arr) {
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     }
+//     return sum;
+// }
+// let numbers = [1, 2, 3, 4, 5];
+// console.log (sumOfArray(numbers));
+
+
+
+// 3. Wap to take input from the user and return the last digit of that number using function type 3
+
+// function getLastDigit() {
+//     let num = parseInt(prompt("Enter a number:"));
+//     let lastDigit = num % 10;
+//     console.log("The last digit of the number is:", lastDigit);
+// }
+// getLastDigit();
+
+
+// 4. Wap to take a input from the user and check number is divisible by 3 or not if divisible then print the table if not divisible just print that number using function type 4
+
+function checkDivisibilityAndPrintTable() {
+    let num = parseInt(prompt("Enter a number:"));
+    if (num % 3 === 0) { 
+        console.log("The number is divisible by 3. Here is the multiplication table:");
+        for (let i = 1; i <= 10; i++) {
+            console.log(num * i);
+        }
+    } else { 
+        console.log( num);
+    }
+}   
+checkDivisibilityAndPrintTable();
+
