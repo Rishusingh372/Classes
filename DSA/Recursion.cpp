@@ -47,3 +47,46 @@
    
 // }
 // ======================================
+
+// Fibonacci serise
+
+// # include <iostream>
+// using namespace std ;
+
+// int main(){
+//     int n , i=0 , f1 = 0 , f2 =1 , sum = 0;
+//     cout<<"Enter the num"<<endl;
+//     cin>>n;
+//     for(i=0 ; i<n ; i++){
+//         cout<<f1<<endl;
+//         sum=f1+f2;
+//         f1=f2;
+//         f2=sum;
+
+//     }
+// }
+
+
+// using Recursion
+
+#include <iostream>
+using namespace std;
+
+
+int fibo(int n){
+    if (n<=1) {
+        return n;
+    }
+    else{
+        return fibo(n-2)+fibo(n-1);
+    }
+}
+
+int main(){
+    int t;
+    cout<<"Enter terms"<<endl;
+    cin>>t;
+    for(int i=0; i<=t; i++){
+        cout<<fibo(i)<<endl;
+    }
+}
