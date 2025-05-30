@@ -486,3 +486,71 @@
 // If we are not use any access specifier then default access specifier is private
 // ==========================================================================
 
+
+
+// ===============================================Constructor=========================
+
+// // Example of Default Constructor
+// #include <iostream>
+// using namespace std;
+// class Point{
+//      public:
+//     int x;
+//     int y;
+
+//     Point(){
+//         x=10;
+//         y=20;
+//         cout<<"\n Default Constructor Called";
+//     }
+//     void showData(){
+//         cout<<"\n X_CO"<<x;
+//         cout<<"\n Y_CO"<<y;
+
+//     }
+// };
+// int main (){
+//     Point P1;
+//     Point P2;
+//     Point P3;
+//     cout<<"\n Object P1 Created";
+//     P1.x=100; 
+//     P1.y=200; 
+//     P1.showData();
+//     P2.showData();
+//     P3.showData();
+
+
+// }
+
+#include <iostream>
+using namespace std;
+class Point{
+     public:
+    int x;
+    int y;
+
+    Point(int a, int b){
+        x=a;
+        y=b;
+        cout<<"\n Parameterized Constructor Called";
+    }
+    void showData(){
+        cout<<"\n X_CO"<<x;
+        cout<<"\n Y_CO"<<y;
+
+    }
+};
+int main (){
+    Point P1(4,5);
+    Point P2(10,20);
+    Point P3(100,300);
+    cout<<"\n Object P1 Created";
+   
+    P1.showData();
+    P2.showData();
+    P3.showData();
+
+return 0;
+}
+
