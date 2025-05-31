@@ -523,34 +523,126 @@
 
 // }
 
-#include <iostream>
-using namespace std;
-class Point{
-     public:
-    int x;
-    int y;
+// #include <iostream>
+// using namespace std;
+// class Point{
+//      public:
+//     int x;
+//     int y;
 
-    Point(int a, int b){
-        x=a;
-        y=b;
-        cout<<"\n Parameterized Constructor Called";
-    }
-    void showData(){
-        cout<<"\n X_CO"<<x;
-        cout<<"\n Y_CO"<<y;
+//     Point(int a, int b){
+//         x=a;
+//         y=b;
+//         cout<<"\n Parameterized Constructor Called";
+//     }
+//     void showData(){
+//         cout<<"\n X_CO"<<x;
+//         cout<<"\n Y_CO"<<y;
 
-    }
-};
-int main (){
-    Point P1(4,5);
-    Point P2(10,20);
-    Point P3(100,300);
-    cout<<"\n Object P1 Created";
+//     }
+// };
+// int main (){
+//     Point P1(4,5);
+//     Point P2(10,20);
+//     Point P3(100,300);
+//     cout<<"\n Object P1 Created";
    
-    P1.showData();
-    P2.showData();
-    P3.showData();
+//     P1.showData();
+//     P2.showData();
+//     P3.showData();
 
-return 0;
+// return 0;
+// }
+
+// ===============================================Constructor 31-05-2025=========================
+
+// create a class with default constructor and parameterized constructor
+// name  
+// enroll
+// section
+// p marks 
+
+// Default 
+// # include <iostream>
+// using namespace std;
+// class Student{
+//     public:
+//     string name;
+//     int enroll;
+//     string section;
+//     int p;
+//     int c;
+//     int m;
+//     int h;
+//     int e;
+
+//     // Default Constructor
+//     Student(){
+//          name = "Rishu";
+//          enroll = 0111;
+//          p=23;
+//          c=33;
+//          m=23;
+//          h=23;
+//          e=34;   
+//     }
+//     void showdata(){
+//         cout<<"\n name"<<name;
+//         cout<<"\n enroll"<<enroll;
+//         cout<<"\n p"<<p;
+//         cout<<"\n c"<<c;
+//         cout<<"\n m"<<m;
+//         cout<<"\n h"<<h;
+//         cout<<"\n e"<<e;
+
+        
+//     }
+
+// };
+
+// int main (){
+//     Student obj ;
+//     obj.showdata();
+//     return 0;
+// }
+
+
+
+# include <iostream>
+using namespace std;
+class Student{
+    string name;
+    int enroll;
+    string section;
+    int p;
+    int c;
+    int m;
+    int h;
+    int e;
+    public : 
+    Student(){
+        cout<<"\n this is a default constructor";
+    }
+    Student(string a,int b,string c, int p1,int c1, int m1, int h1,int e1){
+        name=a;
+        enroll=b;
+        section= c;
+        p=p1;
+        c=c1;
+        m=m1;
+        h=h1;
+        e=e1;
+           cout<<"\n this is parametrise constructor called";
+
+    }
+    ~Student(){
+        cout<<"\n this is destructor called";
+    }
+
+};
+int main()
+{
+    Student obj;
+    Student obj1("rishu",0111,"c",23,33,33,33,33);
+    return 0;
 }
-
