@@ -608,41 +608,98 @@
 
 
 
+// # include <iostream>
+// using namespace std;
+// class Student{
+//     string name;
+//     int enroll;
+//     string section;
+//     int p;
+//     int c;
+//     int m;
+//     int h;
+//     int e;
+//     public : 
+//     Student(){
+//         cout<<"\n this is a default constructor";
+//     }
+//     Student(string a,int b,string c, int p1,int c1, int m1, int h1,int e1){
+//         name=a;
+//         enroll=b;
+//         section= c;
+//         p=p1;
+//         c=c1;
+//         m=m1;
+//         h=h1;
+//         e=e1;
+//            cout<<"\n this is parametrise constructor called";
+
+//     }
+//     ~Student(){
+//         cout<<"\n this is destructor called";
+//     }
+
+// };
+// int main()
+// {
+//     Student obj;
+//     Student obj1("rishu",0111,"c",23,33,33,33,33);
+//     return 0;
+// }
+
+
+// ===============================================Inheritance 2-06-2025=========================
 # include <iostream>
 using namespace std;
-class Student{
-    string name;
-    int enroll;
-    string section;
-    int p;
-    int c;
-    int m;
-    int h;
-    int e;
-    public : 
-    Student(){
-        cout<<"\n this is a default constructor";
-    }
-    Student(string a,int b,string c, int p1,int c1, int m1, int h1,int e1){
-        name=a;
-        enroll=b;
-        section= c;
-        p=p1;
-        c=c1;
-        m=m1;
-        h=h1;
-        e=e1;
-           cout<<"\n this is parametrise constructor called";
+class Rgpv{
+    public:
+    string uname;
+    int ucode;
 
+    Rgpv(){
+        cout<<"\n RGPV Default Constructor Called";
     }
-    ~Student(){
-        cout<<"\n this is destructor called";
+    ~Rgpv(){
+        cout<<"\n RGPV Destructor Called";
     }
 
+    void getData(){
+        cout<<"\n University Name: ";
+        cin>>uname;
+        cout<<"\n University Code: ";
+        cin>>ucode;
+    }
 };
-int main()
-{
-    Student obj;
-    Student obj1("rishu",0111,"c",23,33,33,33,33);
+
+class college: public Rgpv{
+    public:
+    string cname;
+    int ccode;
+    void acceptData(){
+        getData();
+        cout<<"\n Enter College Name: ";
+        cin>>cname;
+        cout<<"\n Enter College Code: ";
+        cin>>ccode;
+
+    }
+    void showData(){
+        cout<<"\n University Name: "<<uname;
+        cout<<"\n University Code: "<<ucode;
+        cout<<"\n College Name: "<<cname;
+        cout<<"\n College Code: "<<ccode;
+    }
+    college(){
+        cout<<"\n College Default Constructor Called";
+    }
+    ~college(){
+        cout<<"\n College Destructor Called";
+    }
+};
+
+int main(){
+    college c;
+    c.acceptData();
+    c.showData();
     return 0;
-}
+}   

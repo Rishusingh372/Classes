@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="count">0</h1>
+    <button onclick="decrement()">-</button>
+    <button onclick="increment()">+</button>
+    <button onclick="reset()">Reset</button>
+
+    <h1 onmouseenter="hover()" onmouseleave="leave()" id="hover">Hover on me</h1>
+
+    <script>
+        let v=0;
+        function decrement(){
+            v--;
+            if (v < 0) {
+                v = 0; 
+            }
+            document.getElementById('count').innerHTML = v;
+        }
+        function increment(){
+            v++;
+            document.getElementById('count').innerHTML = v;
+        }
+        function reset(){
+            v = 0;
+            document.getElementById('count').innerHTML = v;
+        }
+        function hover(){
+            let hover = document.getElementById('hover').innerHTML = "get out of here";
+            document.getElementById('hover').style.color = "red";
+        };
+        function leave(){
+            let leave = document.getElementById('hover').innerHTML = "Hover on me";
+            document.getElementById('hover').style.color = "black";
+        };
+    
+        
+
+      
+        
+</script>
+
+</body>
+</html>
