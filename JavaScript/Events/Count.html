@@ -1,49 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1 id="count">0</h1>
-    <button onclick="decrement()">-</button>
-    <button onclick="increment()">+</button>
-    <button onclick="reset()">Reset</button>
+    <title>Modern Counter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+        }
 
-    <h1 onmouseenter="hover()" onmouseleave="leave()" id="hover">Hover on me</h1>
+        .card {
+            background: rgb(175, 174, 174);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .counter-display {
+            font-size: 5rem;
+            font-weight: 300;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background: #6200ee;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background: #3700b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .reset-btn {
+            background: #f44336;
+        }
+
+        .reset-btn:hover {
+            background: #d32f2f;
+        }
+
+        .hover-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .hover-text {
+            font-size: 1.2rem;
+            color: #555;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hover-section:hover {
+            background: #e9ecef;
+        }
+
+        .hover-section:hover .hover-text {
+            color: #6200ee;
+            transform: scale(1.05);
+        }
+
+        .even {
+            color: #2196F3;
+        }
+
+        .odd {
+            color: #FF5722;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>Interactive Counter</h2>
+
+        <div class="counter-display" id="count">0</div>
+
+        <div class="button-group">
+            <button onclick="decrement()">Decrement</button>
+            <button onclick="increment()">Increment</button>
+            <button class="reset-btn" onclick="reset()">Reset</button>
+        </div>
+
+        <div class="hover-section">
+            <h3 class="hover-text" onmouseenter="hover()" onmouseleave="leave()" id="hover">Hover on me</h3>
+        </div>
+    </div>
 
     <script>
-        let v=0;
-        function decrement(){
+        let v = 0;
+
+        function updateDisplay() {
+            const countElement = document.getElementById('count');
+            countElement.innerHTML = v;
+
+            if (v % 2 === 0) {
+                countElement.classList.add('even');
+                countElement.classList.remove('odd');
+            } else {
+                countElement.classList.add('odd');
+                countElement.classList.remove('even');
+            }
+        }
+
+        function decrement() {
             v--;
             if (v < 0) {
-                v = 0; 
+                v = 0;
             }
-            document.getElementById('count').innerHTML = v;
+            updateDisplay();
         }
-        function increment(){
+
+        function increment() {
             v++;
-            document.getElementById('count').innerHTML = v;
+            updateDisplay();
         }
-        function reset(){
+
+        function reset() {
             v = 0;
-            document.getElementById('count').innerHTML = v;
+            updateDisplay();
         }
-        function hover(){
-            let hover = document.getElementById('hover').innerHTML = "get out of here";
-            document.getElementById('hover').style.color = "red";
-        };
-        function leave(){
-            let leave = document.getElementById('hover').innerHTML = "Hover on me";
-            document.getElementById('hover').style.color = "black";
-        };
-    
-        
 
-      
-        
-</script>
+        function hover() {
+            const hoverElement = document.getElementById('hover');
+            hoverElement.textContent = "You're hovering!";
+        }
 
+        function leave() {
+            const hoverElement = document.getElementById('hover');
+            hoverElement.textContent = "Hover on me";
+        }
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hover Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 20px;
+        }
+
+        .bickimages {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .bickimages img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            cursor: pointer;
+        }
+
+        .bickimages img:hover {
+            border-color: #555;
+        }
+
+        .main-image {
+            width: 500px;
+            height: 400px;
+            object-fit: cover;
+            border: 3px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Image Gallery</h2>
+
+    <div class="gallery">
+        <div class="bickimages">
+            <img src="../bick1.webp" alt="Image 1"
+                onmouseenter="document.getElementById('main-img').src='../bick1.webp'">
+            <img src="../bick2.webp" alt="Image 2"
+                onmouseenter="document.getElementById('main-img').src='../bick2.webp'">
+            <img src="../bick3.webp" alt="Image 3"
+                onmouseenter="document.getElementById('main-img').src='../bick3.webp'">
+            <img src="../bick4.webp" alt="Image 4"
+                onmouseenter="document.getElementById('main-img').src='../bick4.webp'">
+        </div>
+
+        <!-- Main image display -->
+        <img id="main-img" class="main-image" src="../bick4.webp" alt="Main Image">
+    </div>
+</body>
+
+</html>
