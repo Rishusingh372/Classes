@@ -649,57 +649,384 @@
 
 
 // ===============================================Inheritance 2-06-2025=========================
+// # include <iostream>
+// using namespace std;
+// class Rgpv{
+//     public:
+//     string uname;
+//     int ucode;
+
+//     Rgpv(){
+//         cout<<"\n RGPV Default Constructor Called";
+//     }
+//     ~Rgpv(){
+//         cout<<"\n RGPV Destructor Called";
+//     }
+
+//     void getData(){
+//         cout<<"\n University Name: ";
+//         cin>>uname;
+//         cout<<"\n University Code: ";
+//         cin>>ucode;
+//     }
+// };
+
+// class college: public Rgpv{
+//     public:
+//     string cname;
+//     int ccode;
+//     void acceptData(){
+//         getData();
+//         cout<<"\n Enter College Name: ";
+//         cin>>cname;
+//         cout<<"\n Enter College Code: ";
+//         cin>>ccode;
+
+//     }
+//     void showData(){
+//         cout<<"\n University Name: "<<uname;
+//         cout<<"\n University Code: "<<ucode;
+//         cout<<"\n College Name: "<<cname;
+//         cout<<"\n College Code: "<<ccode;
+//     }
+//     college(){
+//         cout<<"\n College Default Constructor Called";
+//     }
+//     ~college(){
+//         cout<<"\n College Destructor Called";
+//     }
+// };
+
+// int main(){
+//     college c;
+//     c.acceptData();
+//     c.showData();
+//     return 0;
+// }   
+
+
+// ===============================================Inheritance 3-06-2025=========================
+
+// #include <iostream>
+// using namespace std;
+
+// class M{
+//     public:
+//     int m;
+//     M(){
+//         cout<<"\n M class Default Constructor is called";
+//     }
+//     M(int m){
+//         this->m = m;
+//         cout<<"\n M class Parameterized Constructor is called";
+//     }
+//     ~M(){
+//         cout<<"\n M class Destructor is called";
+//     }
+//     void getM(int m){
+//         this->m = m;
+//     }
+
+// };
+// class N{
+//     public:
+//     int n;
+//     N(){
+//         cout<<"\n N class Default Constructor is called";
+//     }
+//     N( int n){
+//         this->n = n;
+//         cout<<"\n N class Parameterized Constructor is called";
+//     }
+//     ~N(){
+//         cout<<"\n N class Destructor is called";
+//     }
+//     void getN(int n){
+//         this->n = n;
+//     }
+// };
+
+// class P: public M, public N{
+//     public:
+    
+//     P(){
+//         cout<<"\n P class Default Constructor is called";
+//     }
+//     P(int m, int n): M(m), N(n){
+      
+//         cout<<"\n P class Parameterized Constructor is called";
+//     }
+//     ~P(){
+//         cout<<"\n P class Destructor is called";
+//     }
+//    void total(){
+//     int total = m + n;
+//     cout<<"\n  M is: "<<m;
+//     cout<<"\n  N is: "<<n;
+//      cout<<"\n Total is: "<<total;
+
+//    }
+// };
+// int main(){
+//     P obj(10, 20);
+//     obj.total();
+
+//     return 0;
+// }
+
+// Class Notes:
+// //Hybrid Inheritance
+// #include<iostream>
+// using namespace std;
+// class Student{
+//     protected:
+//         string name;
+//         string enroll;
+//     public:
+//         Student(){
+//         cout<<"\n Student class Default constructor is called";
+//         }
+//         ~Student(){
+//         cout<<"\n Student class Destructor is called";
+//         }
+       
+       
+//     void getData(){
+//         cout<<"Enter Name : ";
+//         cin>>name;
+//         cout<<"Enter Enrollment No : ";
+//         cin>>enroll;
+//     }
+   
+       
+// };
+// class Subject: public Student{
+//     protected:
+//     int subj1;
+//     int subj2;
+//     public:
+//         Subject(){
+//         cout<<"\n Subject class Default constructor is called";
+//         }
+//         ~Subject(){
+//         cout<<"\n Subject class Destructor is called";
+//         }
+       
+       
+//     void getMarks(){
+//         cout<<"Enter Subject 1 Marks : ";
+//         cin>>subj1;
+//         cout<<"Enter Subject 2 Marks  : ";
+//         cin>>subj2;
+//     }
+   
+       
+// };
+// class Sports{
+//     protected:
+//     int smarks;
+//     public:
+//         Sports(){
+//         cout<<"\n Sports class Default constructor is called";
+//         }
+//         ~Sports(){
+//         cout<<"\n Sports class Destructor is called";
+//         }
+       
+       
+//     void getSportsMarks(){
+//         cout<<"Enter Sports Marks : ";
+//         cin>>smarks;
+       
+//     }
+   
+       
+// };
+
+// class Result: public Subject,public Sports{
+//     int total;
+//     public:
+//         Result(){
+//             cout<<"\n Result class Default Constructor is called";
+//         }
+//             ~Result(){
+//             cout<<"\n Result class Destructor is called";
+//         }
+//         void putInfo(){
+//             total=subj1+subj2+smarks;
+//         cout<<"\n Name : "<<name;
+//         cout<<"\n Enrollment No : "<<enroll;
+//         cout<<"\n Sports Marks : "<<smarks;
+//         cout<<"\n Subject 1 Marks : "<<subj1;
+//         cout<<"\n Subject 2 Marks : "<<subj2;
+//         cout<<"\n Total Marks : "<<total;
+       
+       
+//         }
+// };
+// int main(){
+//     Result r;
+//     r.getData();
+//     r.getMarks();
+//     r.getSportsMarks();
+//     r.putInfo();
+//     return 0;
+// }
+// ============================================================
+// class Notes June-2
+
+// Q1. Explain Inheritance in C++ Programming?
+// Ans: Passing Properties from one class to another class is known as inheritance
+
+// A class who gives the properties are known as Parent/Base/super class
+
+
+// A class who receives the properties are known as Child/Derived/sub class
+
+// Note: In case of Inheritance member data or member function should not be private
+
+// Syntax:
+//  class Parent{
+//  public:
+//     //member data
+//     //member function
+ 
+//  };
+
+//  class Child:public Parent{
+//  public:
+//     //member data
+//     //member function
+
+//  }
+
+// Types of Inheritance
+// 1. Single Inheritance
+// 2. Multiple Inheritance
+// 3. Multi level inheritance
+// 4. Hybrid Inheritance
+// 5. Hierchical Inheritance
+// ==================================================
+// Q1. Explain Single Inheritance in C++?
+// Ans: A derived class can inherit exactly one class at a time
+
+// //Single Inheritance
+// #include<iostream>
+// using namespace std;
+
+// class Rgpv{
+   
+//     public:
+//     string uname;
+//     int ucode;
+   
+//     Rgpv(){
+//         cout<<"\n Rgpv Default Constructor is Called ";
+//     }
+//     ~Rgpv(){
+//         cout<<"\n Rgpv class Destructor is Called ";
+//     }
+//     void getData(){
+//         cout<<"Enter University Name : ";
+//         cin>>uname;
+//         cout<<"Enter University code : ";
+//         cin>>ucode;
+//     }
+   
+   
+// };//Parent Class
+
+// class College: public Rgpv{
+//     public:
+//         string cname;
+//         int ccode;
+//     void acceptData(){
+//         getData();
+//     cout<<"Enter college Name : ";
+//     cin>>cname;
+//     cout<<"Enter College Code : ";
+//     cin>>ccode;
+//     }
+//     void showData(){
+//         cout<<"\n University Name : "<<uname;
+//         cout<<"\n University Code: "<<ucode;
+//         cout<<"\n College Name : "<<cname;
+//         cout<<"\n College Code: "<<ccode;
+       
+//     }
+//     College(){
+//         cout<<"\n College class Default Constructor is Called ";
+//     }
+//     ~College(){
+//         cout<<"\n College class Destructor is Called ";
+//     }    
+// };
+
+// int main(){
+//     College c;
+//     c.acceptData();
+//     c.showData();
+//     return 0;
+// }
+// ======================================================04-06-2025===============================
+
+// Hierachical Inheritance
+
 # include <iostream>
 using namespace std;
-class Rgpv{
+class number{
     public:
-    string uname;
-    int ucode;
-
-    Rgpv(){
-        cout<<"\n RGPV Default Constructor Called";
+    int num;
+    number(){
+        cout<<"\n Number class Default Constructor is called";
     }
-    ~Rgpv(){
-        cout<<"\n RGPV Destructor Called";
+     ~number(){
+        cout<<"\n Number class Default Destructor is called";
     }
 
-    void getData(){
-        cout<<"\n University Name: ";
-        cin>>uname;
-        cout<<"\n University Code: ";
-        cin>>ucode;
+   void getnum(){
+        cout<<"\n Enter a number: ";
+        cin>>num;
+       
     }
 };
-
-class college: public Rgpv{
+class squre: public number{
     public:
-    string cname;
-    int ccode;
-    void acceptData(){
-        getData();
-        cout<<"\n Enter College Name: ";
-        cin>>cname;
-        cout<<"\n Enter College Code: ";
-        cin>>ccode;
+    squre(){
+        cout<<"\n squre class Default Constructor is called";
+    }
+     ~squre(){
+        cout<<"\n squre class Default Destructor is called";
+    }
 
+  void getsqure(){
+        cout<<"\n squre of number is: " <<num*num;
+    
     }
-    void showData(){
-        cout<<"\n University Name: "<<uname;
-        cout<<"\n University Code: "<<ucode;
-        cout<<"\n College Name: "<<cname;
-        cout<<"\n College Code: "<<ccode;
+};
+class cube:public number{
+    public:
+    cube(){
+        cout<<"\n cube class Default Constructor is called";
     }
-    college(){
-        cout<<"\n College Default Constructor Called";
+     ~cube(){
+        cout<<"\n cube class Default Destructor is called";
     }
-    ~college(){
-        cout<<"\n College Destructor Called";
+
+  int getcube(){
+       return num*num*num;
+    
     }
 };
 
 int main(){
-    college c;
-    c.acceptData();
-    c.showData();
+   squre obj;
+    obj.getnum();
+    obj.getsqure();
+    cube obj1;
+    obj1.getnum();
+    obj1.getcube();
+    cout<<"\n cube of number is: " <<obj1.getcube();
+
     return 0;
-}   
+}
