@@ -16,3 +16,10 @@
 //     document.getElementById("clac").value=y;
 //     console.log(eval(x));
 // }
+
+function handleinput(){
+    let x =document.getElementById("clr").value;
+    console.log(x);
+    document.getElementById("res").style.backgroundColor =x;
+
+}

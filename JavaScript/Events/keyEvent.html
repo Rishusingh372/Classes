@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, at.</h1>
+    <input type="text" onkeyup="alert('hello key up')">
+    <input type="text" onkeydown="alert('hello key down')">
+    <input type="text" onkeypress="alert('hello key press')"> -->
+
+    <!-- <button onclick="myfunc()">Click me</button> -->
+
+
+    <!-- wap to take two input from html and find the sum of two numbers using javascript.
+      -->
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    answer: <p id="res"></p>
+    <button onclick="sum()">Sum</button>
+    
+
+    <script>
+        // const myfunc = () =>{
+        //     alert('Hello, this is a button click event!');
+        // }
+        p=document.getElementById('res');
+        const sum = () => {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+            const result =parseFloat(num1) + parseFloat(num2);
+            // document.write(result);
+            p.innerHTML = result;
+    
+        }
+    </script>
+
+
+
+</body>
+</html>
