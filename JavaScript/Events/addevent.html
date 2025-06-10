@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <button id="btn">Click Me</button>
+    <input type="text" id="inp">
+
+    <div id="box" style="height: 50px; width: 50px; background-color: lightgreen;">Hello</div>
+
+    <script>
+        x=[1,2,3,4,5];
+        console.log(x);
+        x.forEach((e,i) => {
+            console.log(e, i);
+        });
+        y=document.getElementById("btn")
+        y.addEventListener("click", ()=> {
+            console.log("Button clicked!");
+        });
+
+        // z=document.getElementById("inp")
+        // z.addEventListener("keyup", (e) => {
+        //     console.log(e.code);
+        // });
+
+
+        z=document.getElementById("inp")
+        z=document.getElementById("box")
+        box.style.position = "relative";
+        pos = 10;
+        z.addEventListener('keyup', (e)=>
+    {
+        if(e.code==='KeyA'){
+            box.style.left=pos+'px';
+            pos+=10;                          
+        }
+    })
+
+
+
+    // 
+    </script>
+</body>
+</html>
