@@ -972,61 +972,119 @@
 
 // Hierachical Inheritance
 
-# include <iostream>
-using namespace std;
-class number{
-    public:
-    int num;
-    number(){
-        cout<<"\n Number class Default Constructor is called";
-    }
-     ~number(){
-        cout<<"\n Number class Default Destructor is called";
-    }
+// # include <iostream>
+// using namespace std;
+// class number{
+//     public:
+//     int num;
+//     number(){
+//         cout<<"\n Number class Default Constructor is called";
+//     }
+//      ~number(){
+//         cout<<"\n Number class Default Destructor is called";
+//     }
 
-   void getnum(){
-        cout<<"\n Enter a number: ";
-        cin>>num;
+//    void getnum(){
+//         cout<<"\n Enter a number: ";
+//         cin>>num;
        
-    }
-};
-class squre: public number{
-    public:
-    squre(){
-        cout<<"\n squre class Default Constructor is called";
-    }
-     ~squre(){
-        cout<<"\n squre class Default Destructor is called";
-    }
+//     }
+// };
+// class squre: public number{
+//     public:
+//     squre(){
+//         cout<<"\n squre class Default Constructor is called";
+//     }
+//      ~squre(){
+//         cout<<"\n squre class Default Destructor is called";
+//     }
 
-  void getsqure(){
-        cout<<"\n squre of number is: " <<num*num;
+//   void getsqure(){
+//         cout<<"\n squre of number is: " <<num*num;
+    
+//     }
+// };
+// class cube:public number{
+//     public:
+//     cube(){
+//         cout<<"\n cube class Default Constructor is called";
+//     }
+//      ~cube(){
+//         cout<<"\n cube class Default Destructor is called";
+//     }
+
+//   int getcube(){
+//        return num*num*num;
+    
+//     }
+// };
+
+// int main(){
+//    squre obj;
+//     obj.getnum();
+//     obj.getsqure();
+//     cube obj1;
+//     obj1.getnum();
+//     obj1.getcube();
+//     cout<<"\n cube of number is: " <<obj1.getcube();
+
+//     return 0;
+// }
+
+// ======================================================10-06-2025===============================
+
+// object Count
+
+// # include <iostream>
+// using namespace std;
+// class Point{
+//     int x;
+//     int y;
+//     public:
+//     static int count; //instance variable
+
+//     Point(){
+//         cout<<"Default Constructor is called";
+//         count++;
+//     }
+//    Point(int x ,int y){
+//     cout<<"Parameterized Constructor is called";
+//     count++;
+//    }
+
+//    static int getCtr(){
+//     return count;
+//    }
+// };
+
+// int Point::count = 0; //static variable initialization
+// int main(){
+//     Point p1; 
+//     Point p2(10,20); 
+//     Point p3;
+//     cout<<"\n Total Object Created: "<<Point::getCtr();
+//     cout<<"\n Total Object Created: "<<Point::count;
+//     cout<<"\n Total Object Created: "<<p3.getCtr();
+
+//     return 0;
+// }
+
+
+#include <iostream>
+using namespace std;
+class Test{
+    public:
+    void add(int a=0, int b=0,int c=0 ,int d=0 ,int e=0){
+        cout<<"\n Addition is: "<<a+b+c+d+e;
     
     }
 };
-class cube:public number{
-    public:
-    cube(){
-        cout<<"\n cube class Default Constructor is called";
-    }
-     ~cube(){
-        cout<<"\n cube class Default Destructor is called";
-    }
-
-  int getcube(){
-       return num*num*num;
-    
-    }
-};
-
 int main(){
-   squre obj;
-    obj.getnum();
-    obj.getsqure();
-    cube obj1;
-    obj1.getnum();
-    obj1.getcube();
-    cout<<"\n cube of number is: " <<obj1.getcube();
-
+    Test t;
+    t.add(10,20); // 30
+    t.add(10,20,30); // 60
+    t.add(10,20,30,40); // 100
+    t.add(10,20,30,40,50); // 150
+    t.add(); // 0
     return 0;
 }

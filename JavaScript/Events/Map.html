@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Js MAP and Template Literal</h1>
+    <div id="box">
+
+    </div>
+
+    <script>
+        //     let arr =[1,2,3,4,5,6,7,8,9];
+        //     const arr1=arr.map((e)=>
+        // {
+        //     console.log(e);
+
+        // })
+        //         const box = document.querySelector("#box");
+        //         const data = "Welcome to bhopal";
+        //         const myimg = '/JavaScript/bick1.webp';
+        //         box.innerHTML = `<h1>Hii I am Rishu</h1> 
+        //         <h2>That is js class </h2>
+        //         <h3>${data}</h3>
+        //         <img src="${myimg} " alt="myimg" onclick="img()" id="img"/>
+        //         `
+        //        function img(){
+        //        document.querySelector("#img").style.height="500px";
+
+        // }
+        const box=document.querySelector("#box")
+        console.log(box)
+        const img = ['/JavaScript/bick1.webp','/JavaScript/bick2.webp','/JavaScript/bick3.webp']
+        const myimg =img.map((e)=>{
+         return `
+          <img src="${e}" alt="img" />
+          `
+        })
+        box.innerHTML=myimg;
+    </script>
+</body>
+
+</html>
