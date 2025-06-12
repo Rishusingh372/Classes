@@ -10,10 +10,12 @@
 <body>
 
     <h1>Js MAP and Template Literal</h1>
-    <div id="box">
+    <!-- <div id="box">
 
-    </div>
-
+    </div> -->
+    <input type="text" id="email" placeholder="Email"> <br>
+    <input type="text" id="password" placeholder="Password"> <br>
+    <button onclick="login_user()">LOGIN</button>
     <script>
         //     let arr =[1,2,3,4,5,6,7,8,9];
         //     const arr1=arr.map((e)=>
@@ -33,15 +35,36 @@
         //        document.querySelector("#img").style.height="500px";
 
         // }
-        const box=document.querySelector("#box")
-        console.log(box)
-        const img = ['/JavaScript/bick1.webp','/JavaScript/bick2.webp','/JavaScript/bick3.webp']
-        const myimg =img.map((e)=>{
-         return `
-          <img src="${e}" alt="img" />
-          `
-        })
-        box.innerHTML=myimg;
+        // const box=document.querySelector("#box")
+        // console.log(box)
+        // const img = ['/JavaScript/bick1.webp','/JavaScript/bick2.webp','/JavaScript/bick3.webp']
+        // const myimg =img.map((e)=>{
+        //  return `
+        //   <img src="${e}" alt="img" />
+        //   `
+        // })
+        // box.innerHTML=myimg;
+
+        let user_email = ['email1', 'email2', 'email3', 'email4', 'email5'];
+        let user_password = ['password1', 'password2', 'password3', 'password4', 'password5'];
+        const login_user = () => {
+            let user_input_email = document.querySelector("#email").value;
+            let user_input_password = document.querySelector("#password").value;
+            let ind = (email.findIndex((e) => e === user_input_email));
+            if((user_email ===email[ind]) && (user_password === user_input_password)){
+                alert("Login Successful");
+            } else {
+                alert("Invalid Email or Password");
+            }
+
+            // if (user_email.includes(user_input_email) && user_password.includes(user_input_password)) {
+            //     alert("Login Successful");
+            // } else {
+            //     alert("Invalid Email or Password");
+            // }
+
+        }
+
     </script>
 </body>
 

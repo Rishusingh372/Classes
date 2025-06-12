@@ -29,30 +29,58 @@
         // });
 
 
-        z=document.getElementById("inp")
-        box=document.getElementById("box")
-        box.style.position = "relative";
-        pos = 10;
-        z.addEventListener('keyup', (e)=>
-    {
-        if(e.code==='KeyA'){
-            box.style.left=pos+'px';
-            pos+=10;  
-           if(e.code==='KeyB'){
-            box.style.right=pos+'px';
-            pos-=10;  
-            console.log(pos)                        
-        }
-        else if(e.code==='KeyC'){
-                box.style.top=pos+'px';
-                pos+=10;                          
-            }
-        else if(e.code==='KeyD'){
-                box.style.bottom=pos+'px';
-                pos+=10;                          
-            }                         
-        }
+    //     z=document.getElementById("inp")
+    //     box=document.getElementById("box")
+    //     box.style.position = "relative";
+    //     pos = 10;
+    //     z.addEventListener('keyup', (e)=>
+    // {
+    //     if(e.code==='KeyA'){
+    //         box.style.left=pos+'px';
+    //         pos+=10;  
+                                 
+    //     }
+    //      if(e.code==='KeyB'){
+    //         box.style.right=pos+'px';
+    //         pos-=10;  
+    //         console.log(pos)                        
+    //     }
+    //     else if(e.code==='KeyC'){
+    //             box.style.top=pos+'px';
+    //             pos+=10;   
+    //              console.log(pos)                         
+    //         }
+    //     else if(e.code==='KeyD'){
+    //             box.style.bottom=pos+'px';
+    //             pos+=10;     
+    //              console.log(pos)                       
+    //         }  
      
+    // })
+    z = document.getElementById("inp")
+    box = document.getElementById("box")
+    box.style.position = "relative";
+    let leftPos = 0;
+    let topPos = 0;
+    
+    z.addEventListener('keyup', (e) => {
+        const step = 10;
+        
+        if(e.code === 'KeyA') {
+            leftPos -= step; // Move left
+        } 
+        else if(e.code === 'KeyB') {
+            leftPos += step; // Move right
+        }
+        else if(e.code === 'KeyC') {
+            topPos -= step; // Move up
+        }
+        else if(e.code === 'KeyD') {
+            topPos += step; // Move down
+        }
+        
+        box.style.left = leftPos + 'px';
+        box.style.top = topPos + 'px';
     })
 
 
