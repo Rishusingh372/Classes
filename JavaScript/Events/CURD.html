@@ -1,14 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <button id="Create" onclick="create()">Create</button>
-    <button id="Read" onclick="read()">Read</button>
-    <button id="Update" onclick="update()">Update</button>
-    <button id="Delete" onclick="delet()">Delete</button>
+    <h1>CURD Operation on Array</h1>
+    <h2>Click on the button to perform CURD operation</h2>
+    <button id="Create" onclick="create_array()">Create</button>
+    <button id="Read" onclick="read_array()">Read</button>
+    <button id="Update" onclick="update_array()">Update</button>
+    <button id="Delete" onclick="delete_array()">Delete</button>
+    <br><br>
+    <div id="create">
+        Create <input type="text" id="create_input"><br><br>
+        <button onclick="add_array()">Create </button>
+        <button onclick="close_input()">Close</button>
+    </div>
+    <div id="read_array">
+        Elements:<h2 id="read_array_element">
+            <h2>
+                <button onclick="close_input">Close</button>
+    </div>
+    <div id="update">
+        Find Element : <input type="text" id="find_array_element"><br><br>
+        Updated Element : <input type="text" id="update_array_element">
+        Updated Array : <h2 id="Updated_array"></h2>
+        <button onclick="close_input()" id="btn">Close</button>
+        <button onclick="new_update_array()">Updated Array</button>
+    </div>
+    <div id="delete">
+        Delete<input type="text" id="delete_input"><br><br>
+        final Elements:<h2 id="final_element">
+            <h2>
+                <button onclick="delete_input()">Delete</button>
+                <button onclick="close_input()">Close</button>
+    </div>
+    <script>
+        document.querySelector("#create").style.display = "none";
+        document.querySelector("#read_array").style.display = "none";
+        document.querySelector("#update").style.display = "none";
+        document.querySelector("#delete").style.display = "none";
+        let arr = [];
+        
+        const close_input = () => {
+            document.querySelector("#create").style.display = "none";
+            document.querySelector("#read_array").style.display = "none";
+            document.querySelector("#update").style.display = "none";
+            document.querySelector("#delete").style.display = "none";
+        }
+
+        //    Create
+        const create_array = () => {
+            document.querySelector("#create").style.display = "block";
+        };
+        const add_array = () => {
+            let input = document.querySelector("#create_input").value;
+            let newarr = arr.push(input);
+            console.log(newarr);
+
+            document.querySelector("#create_input").value = "";
+        }
+        //    Read
+        const read_array = () => {
+            document.querySelector("#read_array").style.display = "block";
+            let read_element = document.querySelector("#read_array_element");
+            read_element.innerHTML = arr;
+            console.log(read_element);
+        }
+
+        // Update
+
+        const update_array = () => {
+            document.querySelector("#update").style.display = "block"
+        }
+
+        const new_update_array = () => {
+            let element_update = document.querySelector("#find_array_element").value
+            let new_element = document.querySelector("#update_array_element").value
+            let ind = arr.findIndex(e => e === element_update)
+            arr[ind] = new_element
+            console.log(arr)
+            document.querySelector("#Updated_array").innerHTML = arr;
+        }
+
+        // delete
+        const delete_array = () => {
+            document.querySelector("#delete").style.display = "block"
+        };
+        const delete_input = () => {
+            let deleteElement = document.querySelector("#delete_input").value;
+            let delete_array = arr.findIndex(e => e === deleteElement)
+            arr.splice(delete_array, 1)
+            final_element.innerHTML = arr;
+        }
+
+    </script>
 </body>
+
 </html>
