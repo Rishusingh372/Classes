@@ -9,7 +9,6 @@
 
 <body>
     <h1>CURD Operation on Array</h1>
-    <h2>Click on the button to perform CURD operation</h2>
     <button id="Create" onclick="create_array()">Create</button>
     <button id="Read" onclick="read_array()">Read</button>
     <button id="Update" onclick="update_array()">Update</button>
@@ -39,6 +38,8 @@
                 <button onclick="delete_input()">Delete</button>
                 <button onclick="close_input()">Close</button>
     </div>
+
+
     <script>
         document.querySelector("#create").style.display = "none";
         document.querySelector("#read_array").style.display = "none";
@@ -93,7 +94,9 @@
         };
         const delete_input = () => {
             let deleteElement = document.querySelector("#delete_input").value;
-            let delete_array = arr.findIndex(e => e === deleteElement)
+            let delete_array = arr.findIndex(e => e === deleteElement);
+            console.log(delete_array);
+            
             arr.splice(delete_array, 1)
             final_element.innerHTML = arr;
         }
