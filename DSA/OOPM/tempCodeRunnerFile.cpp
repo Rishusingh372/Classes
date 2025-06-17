@@ -1,1 +1,3 @@
-cout << "\n Product Name: " << name;
+  // b->show();
+    // d1.show1();
+    // d2.show2();
