@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Basic of object</h1>
 
@@ -17,7 +19,7 @@
         // let x= document.getElementById("div")
         // let y = arr.find((e)=>{
         //     return e==="ram"
-            
+
         // });
         // x.innerHTML=y;
 
@@ -54,12 +56,59 @@
         // console.log(obj4);
 
 
-        // Array of objects
-        
+        // ==============Array of objects===========================
+        // let arr = [
+        //     {
+        //         fname: "Rishu",
+        //         lname: "Singh",
+        //         email: "rishu@",
+        //         pass: "12345",
+        //     },
+        //     {
+        //         fname: "Ravi",
+        //         lname: "Kumar",
+        //         email: "ravi@",
+        //         pass: "54321",
+        //     },
+        //     {
+        //         fname: "Raj",
+        //         lname: "Sharma",
+        //         email: "raj@",
+        //         pass: "67890",
+        //     }
+        // ];
+        // console.log(arr[0].fname); // Accessing first object's fname
 
-       
+        // ==================================Reast opertaor======================
+        // console.log("helo");
+        // function myfunction(var1,var2,...item) {
+        //     let s = 0;
+        //     item.map((e) => {
+        //         s += e;
 
-        
+        //     })
+        //     console.log(s);
+        // }
+        // console.log(myfunction(100, 200, 300));
+
+           let products = [
+            { id: 1, Image: "Product 1", price: 100 },
+            { id: 2, Image: "Product 2", price: 200 },
+            { id: 3, image: "Product 3", price: 300 },
+            { id: 4, image: "Product 4", price: 400 },
+            { id: 5, image: "Product 5", price: 500 },
+        ];
+      products.map((e)=>{
+            let div = document.createElement("div");
+            div.innerHTML = `<h1>${e.Image}</h1>
+            <p>Price: ${e.price}</p>`;
+            document.getElementById("div").appendChild(div);
+        });
+
+        // console.log(products);
+
+
     </script>
 </body>
+
 </html>

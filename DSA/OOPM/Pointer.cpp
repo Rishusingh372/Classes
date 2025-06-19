@@ -157,31 +157,67 @@
 // }
 
 // ==============================================operator overloading======================================
+
+// #include <iostream>
+// using namespace std;
+// class Point{
+//     public:
+//     int x, y;
+//     public:
+//     Point(int a, int b) {
+//         x=a;
+//         y=b;
+//     }
+//     bool operator == (Point &p) {
+//         return (x == p.x && y == p.y);
+//     }
+// };
+// int main() {
+//     Point p1(10, 20);
+//     Point p2(10, 20);
+
+//     if (p1 == p2) {
+//         cout << "p1 is equal to p2" << endl;
+//     } else {
+//         cout << "p1 is not equal to p2" << endl;
+//     }
+
+//     return 0;
+// }
+
+
+// ============================================== Abstractio In c++ ======================================
+
 #include <iostream>
 using namespace std;
-class Point{
+class Rgpv{
     public:
-    int x, y;
-    public:
-    Point(int a, int b) {
-        x=a;
-        y=b;
+    void copyCheck(){
+        cout<<"\n This is Rgpv class copyCheck method";
     }
-    bool operator == (Point &p) {
-        return (x == p.x && y == p.y);
+    virtual void cctv()=0; // Pure virtual function making this class abstract
+
+};
+class college : public Rgpv{
+    public:
+    void staff(){
+        cout<<"\n this is college class staff method";
+    }
+    void cctv(){
+        cout<<"\n This is Rgpv class method own by college class methods";
     }
 };
-int main() {
-    Point p1(10, 20);
-    Point p2(10, 20);
 
-    if (p1 == p2) {
-        cout << "p1 is equal to p2" << endl;
-    } else {
-        cout << "p1 is not equal to p2" << endl;
-    }
-
+int main(){
+    college c;
+    c.copyCheck();
+    c.cctv();
+    c.staff();
+    // Rgpv r; // Cannot instantiate an abstract class
+    Rgpv *r;
+    college c1;
+    r=&c1;
+    r->copyCheck(); // Accessing method from abstract class
+    r->cctv(); // Accessing overridden method from derived class
     return 0;
 }
-
-
