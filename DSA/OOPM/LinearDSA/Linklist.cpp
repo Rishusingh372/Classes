@@ -25,9 +25,9 @@ Node*second=new Node(20);
 Node*third=new Node(30);
 first -> next=second;
 first -> next->next=third;
-cout<<first->data<<endl;
-cout<<first->next->data<<endl;
-cout<<first->next->data;
+// cout<<first->data<<endl;
+// cout<<first->next->data<<endl;
+// cout<<first->next->data;
 first-> display(first);
 return 0;
 

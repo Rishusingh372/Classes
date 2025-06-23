@@ -1,27 +1,109 @@
 import products from './ourproduct.js';
-console.log(products);
 
-let prod=document.getElementById("prod");
-console.log(prod);
+const productsContainer = document.getElementById("prod");
+const cartContainer = document.getElementById("cart");
+let cartItems = [];
 
-prod.innerHTML=products.map((e)=>{
-    return `<div class="card" style="height: 300px; width: 300px; border: 2px solid black; ">
-                <img src="${e.image}" alt="${e.name} "  style="height: 100px; width: 100px;">
-                <h2>${e.name}</h2>
-                <p>Price: $${e.price}</p>
-                <button onclick=addproduct(${e.price})>Add to Cart</button>
-                <button onclick=removeproduct(${e.price})>Remove to Cart</button>
-
+// Display products
+function displayProducts() {
+  productsContainer.innerHTML = products.map((product) => {
+    return `<div class="card">
+              <img src="${product.image}" alt="${product.name}">
+              <h2>${product.name}</h2>
+              <p>Price: $${product.price}</p>
+              <p>ID: ${product.id}</p>
+              <div class="card-buttons">
+                <button onclick="addToCart(${product.id})">Add</button>
+                <button class="remove-btn" onclick="removeFromCart(${product.id})">Remove</button>
+              </div>
             </div>`;
-            console.log(prod)
-});
-let p=0;
-window.addproduct = (price)=>{
-  p=p+price;
-  alert(p);
+  }).join(" ");
 }
-window.removeproduct = (price)=>{
-  p=p-price;
-  alert(p);
+
+// Add to cart function
+window.addToCart = (productId) => {
+  const productToAdd = products.find((product) => product.id === productId);
+  const existingItem = cartItems.find((item) => item.id === productId);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cartItems.push({ ...productToAdd, quantity: 1 });
+  }
+
+  updateCart();
 }
-   
+
+// Remove from cart function
+window.removeFromCart = (productId) => {
+  const existingItemIndex = cartItems.findIndex((item) => item.id === productId);
+
+  if (existingItemIndex !== -1) {
+    if (cartItems[existingItemIndex].quantity > 1) {
+      cartItems[existingItemIndex].quantity -= 1;
+    } else {
+      cartItems.splice(existingItemIndex, 1);
+    }
+    updateCart();
+  }
+}
+
+// Update cart display
+function updateCart() {
+  if (cartItems.length === 0) {
+    cartContainer.innerHTML = "<h2>Your Cart</h2><p>Your cart is empty</p>";
+    return;
+  }
+
+  let cartHTML = `<h2>Your Cart</h2>`;
+  let total = 0;
+
+  cartItems.forEach((item) => {
+    total += item.price * item.quantity;
+    cartHTML += `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="cart-item-info">
+          <h3>${item.name}</h3>
+          <p>$${item.price} x ${item.quantity}</p>
+          <p>ID: ${item.id}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  cartHTML += `<div class="cart-total">Total: $${total.toFixed(2)}</div>`;
+  cartContainer.innerHTML = cartHTML;
+}
+
+// Add new product function
+window.addNewProduct = () => {
+  const id = document.getElementById("id").value;
+  const name = document.getElementById("name").value;
+  const price = parseFloat(document.getElementById("price").value);
+  const image = document.getElementById("image").value;
+
+  if (id && name && !isNaN(price) && image) {
+    const newProduct = {
+      id: parseInt(id),
+      name,
+      price,
+      image
+    };
+
+    products.push(newProduct);
+    displayProducts();
+
+    // Clear input fields
+    document.getElementById("id").value = '';
+    document.getElementById("name").value = '';
+    document.getElementById("price").value = '';
+    document.getElementById("image").value = '';
+  } else {
+    alert("Please fill all fields correctly");
+  }
+}
+
+// Initialize
+displayProducts();
+updateCart();

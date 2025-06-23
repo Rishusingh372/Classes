@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Local Storage in JavaScript </h1>
+    <script>
+        // localStorage.setItem("key","Rishu");
+        // let data=localStorage.getItem("key");
+        // console.log(data);
+
+        // removeItem use to remove key according to the Key 
+        // localStorage.removeItem("key");
+        // console.log(data);
+
+        let data={
+            name:"Rishu",
+            Age:22
+        }
+        localStorage.setItem("key",JSON.stringify(data));
+        let localdat=JSON.parse(localStorage.getItem("key"));
+        console.log(localdat);
+    </script>
+</body>
+</html>
