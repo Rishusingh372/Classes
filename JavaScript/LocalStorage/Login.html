@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User Login</h1>
+    <form action="" id="form">
+        Email: <input type="text" id="email"><br>
+        Password: <input type="password" id="pass"><br>
+        <input type="submit" value="LOGIN">
+        <input type="submit" value="SIGNIN">
+       
+    </form>
+
+    <div id="invalid"></div>
+    <script>
+        let user = JSON.parse(localStorage.getItem("user")||'[]');
+        console.log(user);
+        let inavalid=document.getElementById("invalid")
+        let form=document.getElementById("form");
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            let email=document.getElementById('email').value;
+            let pass=document.getElementById('pass').value;
+            console.log(email,pass);
+
+            let founduser=user.find(e=>e.email===email && e.pass===pass);
+
+            if(founduser){
+                localStorage.setItem('islogin',JSON.stringify(founduser));
+                window.location.href="userdashboard.html";
+            }
+            else{
+                inavalid.innerHTML='<h1>inavalid user</h1>'
+            }
+        })
+
+
+    </script>
+</body>
+</html>
