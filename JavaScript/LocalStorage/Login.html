@@ -1,44 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        #form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .register-link a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        #invalid {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>User Login</h1>
-    <form action="" id="form">
-        Email: <input type="text" id="email"><br>
-        Password: <input type="password" id="pass"><br>
-        <input type="submit" value="LOGIN">
-        <input type="submit" value="SIGNIN">
-       
-    </form>
+    <div id="form-container">
+        <h1>User Login</h1>
+        <form action="" id="form">
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your email"><br>
 
-    <div id="invalid"></div>
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" placeholder="Enter your password"><br>
+
+            <input type="submit" value="LOGIN">
+        </form>
+        <!-- <input type="submit" value="SIGNIN" onclick="window.location.href='registation.html'"> -->
+        <div class="register-link">
+            You need to register before you can login. <a href="registation.html">Register here</a>
+        </div>
+
+        <div id="invalid"></div>
+    </div>
+
     <script>
-        let user = JSON.parse(localStorage.getItem("user")||'[]');
+        let user = JSON.parse(localStorage.getItem("user") || '[]');
         console.log(user);
-        let inavalid=document.getElementById("invalid")
-        let form=document.getElementById("form");
-        form.addEventListener("submit",(e)=>{
+        let inavalid = document.getElementById("invalid")
+        let form = document.getElementById("form");
+        form.addEventListener("submit", (e) => {
             e.preventDefault();
-            let email=document.getElementById('email').value;
-            let pass=document.getElementById('pass').value;
-            console.log(email,pass);
+            let email = document.getElementById('email').value;
+            let pass = document.getElementById('pass').value;
+            console.log(email, pass);
 
-            let founduser=user.find(e=>e.email===email && e.pass===pass);
+            let founduser = user.find(e => e.email === email && e.pass === pass);
 
-            if(founduser){
-                localStorage.setItem('islogin',JSON.stringify(founduser));
+            if (founduser) {
+                localStorage.setItem('islogin', JSON.stringify(founduser));
                 window.location.href="userdashboard.html";
+                // window.location.href = "../Addto Cart/add_to_cart.html";
             }
-            else{
-                inavalid.innerHTML='<h1>inavalid user</h1>'
+            else {
+                inavalid.innerHTML = 'Invalid email or password. Please try again.';
             }
         })
-
-
     </script>
 </body>
+
 </html>

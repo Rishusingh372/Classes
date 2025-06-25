@@ -13,9 +13,21 @@ const userdata=(e)=>{
     // alert("hello")
 
     window.location.href="Login.html";
-    
+
+    // const user_exists = user.find(u => u.email === email && u.number === number);
+    // if (user_exists) {
+    //     alert("User already exists. Please log in.");
+    //     return;
+    // }
+    // else{
+    //     window.location.href="Login.html";
+    // }
+
 
 }
+
 document.addEventListener("DOMContentLoaded",()=>{
     document.querySelector("form").addEventListener("submit",userdata);
 })
+
+
