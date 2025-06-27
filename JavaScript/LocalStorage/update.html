@@ -35,7 +35,20 @@
                 number: document.getElementById("number").value,
                 pass: document.getElementById("pass").value
             };
+
+            user.map((u)=>{
+                if(islogin.email===u.email){
+                    return updatedata;
+                    
+                } return u;
+              
+            })
+
+            localStorage.setItem("user",JSON.stringify(user));
+            localStorage.setItem("islogin",JSON.stringify(updatedata));
+            window.location.href="./userdashboard.html";
             console.log(updatedata);
+
 
            
         });
