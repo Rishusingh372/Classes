@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Error and promises in Javascript</h1>
+    <div id="API">
+
+    </div>
+
+    <script>
+        console.log("Error and promises in Javascript");
+
+        // try {
+        //     x = 10
+        //     console.log(x);
+        // }
+        // catch (error) {
+        //     throw new Error("X ko define kro");
+        // }
+        // finally {
+        //     console.log("program finish");
+
+        // }
+
+        let p = new Promise((a, r) => {
+            let car = fetch("https://fakestoreapi.in/api/products")
+ 
+            if (car) {
+                car.then((e)=>{
+                    a(e.json());
+                })
+            }
+            else {
+                r("reject")
+            }
+
+        })
+        // console.log(p);
+
+        p.then((e) => {
+            let data = e.products;
+            console.log(data);
+            data.map((e1)=>{
+                console.log(e1.id);
+
+                // document.write(`<h1>${e1.title}</h1>`);
+                document.getElementById("API").innerHTML = `<h1>${e1.title}</h1>`;
+            })
+        })
+    </script>
+</body>
+
+</html>
