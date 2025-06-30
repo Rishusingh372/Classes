@@ -6,10 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #data {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+    }
+    #card {
+        border: 3px solid black;
+        width: 400px;
+        /* height: 600px; */
+        text-align: center;
+    }
+    #card img {
+        border-radius: 10px;
+    }
+    #card h1 {
+        font-size: 20px;
+        color: blue;
+    }
+    #card h2 {
+        font-size: 18px;
+        color: green;
+    }
+    #card p {
+        font-size: 16px;
+        color: gray;
+    }
+    #card button {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
 
 <body>
     <h1>Error and promises in Javascript</h1>
-    <div id="API">
+    <div id="data" >
+
+
 
     </div>
 
@@ -42,16 +88,38 @@
 
         })
         // console.log(p);
+        let prodata = document.getElementById("data");
 
         p.then((e) => {
             let data = e.products;
             console.log(data);
-            data.map((e1)=>{
+           prodata.innerHTML= data.map((e1)=>{
                 console.log(e1.id);
+                return `
+                <div id ="card">
+                <h1>${e1.title}</h1>
+                <p>${e1.description.slice(0,200)}</p>
+                <img src="${e1.image}" alt="product image" width="100px">
+                <h2>Price: ${e1.price}</h2>
+                <h2>Category: ${e1.category}</h2>
+                <strong>Price: ${e1.price}</strong><br><br>
+                <button onclick="add(${e1.price})">Add to Cart</button>
+                </div>
+                `;
+
+
 
                 // document.write(`<h1>${e1.title}</h1>`);
-                document.getElementById("API").innerHTML = `<h1>${e1.title}</h1>`;
+                // document.getElementById("API").innerHTML = `<h1>${e1.title}</h1>`;
             })
+            window.add = (price)=>{
+                // alert("Product added to cart");
+                // let product_data = document.getElementById("card").querySelector("h2").innerText;
+                console.log(price);
+               
+              
+               
+            }
         })
     </script>
 </body>
