@@ -1,0 +1,62 @@
+Q1. Explain non Linear Data structure?
+Ans: A Data structure is non-linear when all elements are not arranged in a linear(sequential) order. There is no linear arrangment of the elements
+
+There are two types of non-linear data structure
+1. Tree
+2. Graph
+
+============================================
+Q2. Explain Tree Data structure?
+Ans: A tree is a connected graph without any circuit
+
+Tree is a non-linear data structure which organize data in hierarchical structure and this is a recursive defintion.
+
+
+if in a graph , there is one and only one path between every pair of vertices . then the graph is tree.
+
+A graph is a tree if and only it it is minimumn connected.
+
+Any connected graph with n vertices and n-1 edges is a tree.
+
+Properties of Tree:
+1. A tree with n vertices has n-1 edges.
+=======================================================
+Q2. Explain Tree Terminology?
+Ans:
+1. Root: Root Node is the origin of the tree data structure. it is the first node of the tree.
+
+There must be only one root node and we can never have multiple root node in a tree
+
+2. Edge: The connecting link between only two nodes is called edges
+
+3. Parent Node: The Node which has a branch from it to any other node is called a Parent Node.
+
+4. Child Node: A node that have a Parent node is called a child node.
+
+5. Sibling: Node which belongs same parent are called sibling.
+In other words node with same parent is called sibling
+
+=============================================================================================================
+
+
+Q1. Explain types of tree?
+Ans:
+1. General Tree: A tree where a node can have any number of children
+    Flexible but not efficient for the operation
+
+2. Binary Tree: Each node has at most two children
+   Types of Binary Tree:
+   A. Full Binary Tree: Every Node has either 2 child or 0        child, No node has one child
+
+   B. Perfect Binary Tree: A FUll Binary tree where all leaf nodes are the same level, and all internal node have 2 children
+   C. Complete Binary Tree: All level are completely filled except possibly the last level, which is filled from left to right.
+   D. Balanced Binary Tree: A tree where the height difference at most 1(-1,0,1)
+=======================================
+1. Left Skewed Tree: A tree where each parent has only left child
+2. Right Skewed Tree: A Tree where each parent has only right child
+=============================================
+Q1. Explain Binary Search Tree?
+Ans: Binary Search Tree: is a Node based binary tree data structure which has the following properties
+1. The Left sub tree of a node contains only nodes whose values less than the Parent.
+2. The right sub tree of a node contains only nodes which is greater than the Parent node.
+3. The left Tree and Right Sub tree also Binary search Tree
