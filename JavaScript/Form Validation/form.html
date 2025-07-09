@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="data"></div>
+    <form action="abc.html" onsubmit="return handlesubmit(event)">
+        name: <input type="text" name="name" id="a"> <br>
+        email: <input type="email" name="email" id="b"> <br>
+        password: <input type="text" name="password" id="p1"> <br>
+        repassword: <input type="text" name="repassword" id="p2"> <br>
+        mobile: <input type="text" name="text" id="no"> <br>
+        <input type="submit" value="Signup">
+    </form>
+    <script>
+        const handlesubmit = (e) => {
+            const name = document.getElementById("a").value;
+            const email = document.getElementById("b").value;
+            const password = document.getElementById("p1").value;
+            const repassword = document.getElementById("p2").value;
+            const mobile = document.getElementById("no").value;
+            if (name == "" || email == "" || password == "" || repassword == "" || mobile == "") {
+                e.preventDefault(); // Prevent form submission
+                document.getElementById("data").innerHTML = "Please fill all the fields";
+                return false;
+            }
+            else if (password !== repassword) {
+                e.preventDefault(); // Prevent form submission
+                document.getElementById("data").innerHTML = "password sahi se do";
+                return false;
+            }
+            else if (mobile.length !== 10 || isNaN(mobile)) {
+                e.preventDefault(); // Prevent form submission
+                document.getElementById("data").innerHTML = "Mobile number should be 10 digits  OR should be a number";
+                return false;
+            }
+            else if (!email.includes("@") || !email.includes(".")) {
+                e.preventDefault(); // Prevent form submission
+                document.getElementById("data").innerHTML = "Please enter a valid email address";
+                return false;
+            }
+            else if (password.length < 8) {
+                e.preventDefault(); // Prevent form submission
+                document.getElementById("data").innerHTML = "Password must be at least 6 characters long";
+                return false;
+            }
+
+            else {
+                return true; // Allow form submission
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
