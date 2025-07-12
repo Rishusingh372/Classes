@@ -19,8 +19,11 @@ function App() {
       <h3>Here is a list of numbers:</h3>
       {
         arr.map((i)=>(
-          <h3>{i}</h3>
-        ))
+          
+           <h3>{i}</h3>
+        )
+         
+        )
       }
 
     </>
