@@ -1,59 +1,78 @@
-// stack implementation using Linkedlist
-#include <iostream>
+//stack Implemementation Using LinkedList
+#include<iostream>
 using namespace std;
-
 class Node
 {
-public:
+    public:
     int data;
     Node *next;
-    Node(int d)
-    {
-        data = d;
-        next = NULL;
+    Node(int d){
+        data=d;
+        next=NULL;
     }
 };
-class Stack
-{
-    Node *top;
-
-public:
-    Stack()
-    {
-        top = NULL;
+class Stack{
+    public:
+        Node *top;
+    Stack(){
+        top=NULL;
     }
-    void push(int d)
-    {
-        Node *newNode = new Node(d);
-        if (top == NULL)
-        {
-            cout << "Stack is empty, adding first element: " << d << endl;
-            top = newNode;
+    void push(int d){
+        Node *newNode=new Node(d);
+        if(top==NULL){
+            top=newNode;
+            cout<<"First Element Push into stack";
+        }else{
+            newNode->next=top;
+            top=newNode;
+            cout<<"\n Push Element after First Element";
         }
-        else
-        {
-            cout << "Pushing element after first element " << d << endl;
-            newNode->next = top;
-            top = newNode;
+       
+    }
+   
+    int pop(){
+        if(top==NULL){
+            cout<<"\n Stack is Empty";
         }
+        int r;
+        Node *temp=top;
+        r=temp->data;//50
+        top=top->next;
+        delete(temp);
+        return r;
     }
     void display(){
-        Node *temp = top;
-        cout << "Displaying stack elements: ";
-        while (temp != NULL)
-        {
-            cout << temp->data << " ";
-            temp = temp->next;
-        }
-        cout << endl;
+    Node *temp=top;
+    cout<<"\nPrint Data of Stack  \n";
+    while(temp!=NULL){
+        cout<<"\n===>"<<temp->data;
+        temp=temp->next;
+    }    
+    }
+   
+    int peek(){
+        return top->data;
+    }
+    bool isEmpty(){
+        return top==NULL;
+    }
+};
 
-    };
-};
 int main(){
-    Stack s;
-    s.push(10);
-    s.push(20);
-    s.push(30);
-    s.display();
+    Stack sk;
+    sk.push(10);
+    sk.push(20);
+    sk.push(30);
+    sk.push(40);
+    sk.push(50);
+    sk.display();
+    cout<<"\n Deleted Element from the STack : "<<sk.pop();
+    cout<<"\n Deleted Element from the STack : "<<sk.pop();
+    cout<<"\n Top Element of The Stack "<<sk.peek();
+    cout<<"\n isEmpty : "<<sk.isEmpty();
+    cout<<"\n Deleted Element from the STack : "<<sk.pop();
+    cout<<"\n Deleted Element from the STack : "<<sk.pop();
+    cout<<"\n Deleted Element from the STack : "<<sk.pop();
+    sk.display();
     return 0;
-};
+}
