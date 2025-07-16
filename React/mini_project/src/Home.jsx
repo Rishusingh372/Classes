@@ -1,7 +1,10 @@
 import React from 'react'
+import Mycomp from './Mycomp'
 
-function Home() {
+
+function Home(props) {
   return (
+    <>
      <section>
         <div className="hero">
           <div className="hero_content">
@@ -13,7 +16,15 @@ function Home() {
             <img src="https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fbike-images%2Fbig%2Fktm%2Frc-200%2Fktm-rc-200.jpg%3Fv%3D27&w=3840&q=75" alt="Hero" />
           </div>
         </div>
+       
+          <div>
+            <h1>{props.img}</h1>
+            <img src={props.img[0]} alt="" />
+          </div>
+        
       </section>
+      <Mycomp/>
+      </>
   )
 }
 

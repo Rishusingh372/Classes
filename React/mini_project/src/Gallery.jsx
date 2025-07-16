@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const GallerySection = () => {
+const GallerySection = (props) => {
   const [activeFilter, setActiveFilter] = useState('all');
   
   // Gallery data
@@ -70,7 +70,9 @@ const GallerySection = () => {
           ))}
         </div>
       </div>
+      <h1>{props.name}</h1>
     </section>
+
   );
 };
 
