@@ -9,6 +9,8 @@ const Page2 = () => {
         Number:""
     })
 
+    
+
     const handlechange=(e)=>{
         const {name,value}=e.target;
         updateformdata((prev)=>(
