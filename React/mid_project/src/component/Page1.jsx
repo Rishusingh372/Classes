@@ -1,27 +1,58 @@
 import React from 'react'
 import { useState } from 'react'
 import '../mycss/style.css'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+
 
 const page1 = () => {
-  const[name,uname]=useState(null);
-  const[email,uemail]=useState(null);
-  const[mobile,umobile]=useState(null);
-  const[password,upassword]=useState(null);
+  let navigate= useNavigate();
+  let baseurl="http://localhost:4000/user";
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    password: ''
+  });
+
+  const handlechange = (e) => {
+    const { name, value } = e.target; 
+     setFormData((prev)=>(
+      {...prev,
+        [name]:value
+      }
+
+     )) 
+  }
+
+  const singupdata=async(e)=>{
+    e.preventDefault();
+
+    try {
+      await axios.post(baseurl,formData)
+      navigate('/dashboard',{state:formData})
+
+      
+    } catch (error) {
+      alert("Sorry Url is not working")
+    }
+  }
 
   return (
    <>
-     <form action="">
+     <form action="" onSubmit={singupdata} >
       <fieldset>
         <legend>MyForm</legend>
-        <input type="text" placeholder='Name' onChange={(e)=>uname(e.target.value)}/> <br /> <br />
-        <input type="text" placeholder='Email' onChange={(e)=>uemail(e.target.value)} /> <br /> <br />
-        <input type="text" placeholder='Mobile' onChange={(e)=>umobile(e.target.value)} /> <br /> <br />
-        <input type="text" placeholder='Password'  onChange={(e)=>upassword(e.target.value)} /> <br /> <br />
+        <input type="text" placeholder='Name'name='name' value={formData.name} onChange={handlechange}/> <br /> <br />
+        <input type="text" placeholder='Email' name='email' value={formData.email} onChange={handlechange} /> <br /> <br />
+        <input type="text" placeholder='Mobile' name='mobile' value={formData.mobile} onChange={handlechange} /> <br /> <br />
+        <input type="text" placeholder='Password' name='password'  value={formData.password} onChange={handlechange} /> <br /> <br />
         <button>Submit</button>
-        <h1>Name:{name}</h1>
-        <h2>Email:{email}</h2>
-        <h3>Mobile:{mobile}</h3>
-        <h3>Password:{password}</h3>
+        <h1>Name:{formData.name}</h1>
+        <h2>Email:{formData.email}</h2>
+        <h3>Mobile:{formData.mobile}</h3>
+        <h3>Password:{formData.password}</h3>
 
       </fieldset>
      </form>

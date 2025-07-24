@@ -1,11 +1,32 @@
 {
-    
-      "user":[{
-          "id":1,
-          "name":"Rishu",
-          "email":"rishu@gmail.com",
-          "mobile":"1234567891",
-          "password":"1234"
-        }
-      ]
+  "user": [
+    {
+      "id": "1",
+      "name": "Rishu",
+      "email": "rishu@gmail.com",
+      "mobile": "1234567891",
+      "password": "1234"
+    },
+    {
+      "id": "cc0b",
+      "name": "Rishu Kumar Singh Rishu Kumar Singh",
+      "email": "rishu272018@gmail.com",
+      "mobile": "09341897481",
+      "password": "password1"
+    },
+    {
+      "id": "5440",
+      "name": "raj",
+      "email": "rah@",
+      "mobile": "09341897481",
+      "password": "12345678"
+    },
+    {
+      "id": "fcf0",
+      "name": "Chanchal Sir",
+      "email": "Chanchal@gmail",
+      "mobile": "123456789",
+      "password": "123"
+    }
+  ]
 }
