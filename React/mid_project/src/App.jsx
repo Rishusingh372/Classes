@@ -6,6 +6,8 @@ import Page3 from './component/Page3';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './component/Dashboard';
 import Admin from './component/Admin';
+import TaskfackApi from './component/TaskfackApi';
+
 
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
             <Route path="/page3" element={<Page3 />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/admin" element={<Admin />} />
-
+            <Route path="/task" element={<TaskfackApi />} />
           </Routes>
          </Router>
           

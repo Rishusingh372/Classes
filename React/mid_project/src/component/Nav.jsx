@@ -14,6 +14,8 @@ const Nav = () => {
         <li><Link to={"/dashboard"}> Dashboard</Link></li>
         <li><Link to={"/gallery"}> Gallery</Link></li>
         <li><Link to={"/contact"}> Contact</Link></li>
+        <li><Link to={"/task"}> Products</Link></li>
+        <li><Link to={"/admin"}> Admin</Link></li>
 
         </ul>
       </nav>

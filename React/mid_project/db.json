@@ -27,6 +27,20 @@
       "email": "Chanchal@gmail",
       "mobile": "123456789",
       "password": "123"
+    },
+    {
+      "id": "6f0d",
+      "name": "aadarsh",
+      "email": "pandey@",
+      "mobile": "987654321`",
+      "password": "123456"
+    },
+    {
+      "id": "ae81",
+      "name": "abc",
+      "email": "avsd@",
+      "mobile": "123456",
+      "password": "123456"
     }
   ]
 }

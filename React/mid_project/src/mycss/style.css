@@ -74,3 +74,28 @@ form{
     border: 2px solid rgb(230, 15, 15);
 
 }
+
+
+/* TaskFackApi */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.product-item {
+    border: 1px solid #010101;
+    border-radius: 8px;
+    padding: 16px;
+    width: 400px;
+    text-align: center;
+}
+.product-item img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 4px;
+}
