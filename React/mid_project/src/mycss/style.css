@@ -99,3 +99,25 @@ h1 {
     height: auto;
     border-radius: 4px;
 }
+
+
+
+
+
+
+.login-type-selector {
+    margin: 20px 0;
+}
+
+.login-type-selector button {
+    padding: 8px 16px;
+    margin-right: 10px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.login-type-selector button.active {
+    background: #007bff;
+    color: white;
+}

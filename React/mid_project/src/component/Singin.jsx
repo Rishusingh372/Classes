@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 const page1 = () => {
   let navigate= useNavigate();
-  let baseurl="http://localhost:4000/user";
+  let baseurl="http://localhost:4001/user";
 
   const [formData, setFormData] = useState({
     name: '',
@@ -31,7 +31,7 @@ const page1 = () => {
 
     try {
       await axios.post(baseurl,formData)
-      navigate('/dashboard',{state:formData})
+      navigate('/login',{state:formData})
 
       
     } catch (error) {

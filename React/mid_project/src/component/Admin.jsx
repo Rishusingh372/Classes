@@ -5,10 +5,9 @@ import '../mycss/style.css'
 
 
 const Admin = () => {
-    let API_URl = "http://localhost:4000/user";
+    let API_URl = "http://localhost:4001/user";
     let [initialdata, updatedata] = useState([]);
-    useEffect(() => {
-        const fetchData = async () => {
+      const fetchData = async () => {
             try {
                 const response = await axios.get(API_URl);
                 updatedata(response.data);
@@ -16,9 +15,42 @@ const Admin = () => {
                 console.error("Error fetching data:", error);
             }
         };
+    useEffect(() => {
+      
         fetchData();
     }, []);
-    console.log(initialdata);
+    // console.log(initialdata);
+    // Delete function
+    const userDelete =async(id)=>{
+        let confirm = window.confirm("Are you sure you want to delete this user?");
+        if(!confirm) return;
+        try {
+            await axios.delete(`${API_URl}/${id}`);
+            fetchData();
+
+            
+        } catch (error) {
+            console.error("Error deleting user:", error);
+            
+        }
+    }
+
+    // Update function
+    const userUpdate = async(id)=>{
+        alert(id);
+        `
+        <form>
+         <input type="text" placeholder='Name' />
+         <input type="email" placeholder='Email' />
+         <input type="number" placeholder='Mobile' />
+         <input type="password" placeholder='Password' />
+         <button type="submit">Update</button>
+
+        </form>
+        `     
+        
+
+    }
 
 
   return (
@@ -41,12 +73,20 @@ const Admin = () => {
                         <td>{item.email}</td>
                         <td>{item.mobile}</td>
                         <td>{item.password}</td>
-                        <td><button>Delete</button></td>
-                        <td><button>Update</button></td>
+                        <td><button onClick={()=>userDelete(item.id)}>Delete</button></td>
+                        <td><button onClick={()=>userUpdate(item.id)}>Update </button></td>
                     </tr>
                 ))}
             </tbody>
+
         </table>
+        {/* <form action="">
+            Name: <input type="text" id='name'/><br />
+            Email: <input type="email" id='email' /><br />
+            Mobile: <input type="number" id='mobile' /><br />
+            Password: <input type="password" id='password' /><br />
+            <button type="submit" >Submit</button>
+        </form> */}
    </>
   )
 }

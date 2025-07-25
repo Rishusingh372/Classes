@@ -1,46 +1,18 @@
 {
   "user": [
     {
-      "id": "1",
-      "name": "Rishu",
-      "email": "rishu@gmail.com",
-      "mobile": "1234567891",
-      "password": "1234"
-    },
-    {
-      "id": "cc0b",
+      "id": "f00a",
       "name": "Rishu Kumar Singh Rishu Kumar Singh",
       "email": "rishu272018@gmail.com",
       "mobile": "09341897481",
-      "password": "password1"
+      "password": "1234567890"
     },
     {
-      "id": "5440",
-      "name": "raj",
-      "email": "rah@",
-      "mobile": "09341897481",
-      "password": "12345678"
-    },
-    {
-      "id": "fcf0",
-      "name": "Chanchal Sir",
-      "email": "Chanchal@gmail",
-      "mobile": "123456789",
-      "password": "123"
-    },
-    {
-      "id": "6f0d",
-      "name": "aadarsh",
-      "email": "pandey@",
-      "mobile": "987654321`",
-      "password": "123456"
-    },
-    {
-      "id": "ae81",
+      "id": "3f6a",
       "name": "abc",
-      "email": "avsd@",
-      "mobile": "123456",
-      "password": "123456"
+      "email": "abc@gmail.com",
+      "mobile": "9931871624",
+      "password": "1324567"
     }
   ]
 }
