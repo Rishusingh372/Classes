@@ -12,7 +12,7 @@ const page1 = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    mobile: '',
+    mobile: '', 
     password: ''
   });
 
