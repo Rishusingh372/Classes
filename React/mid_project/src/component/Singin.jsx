@@ -43,18 +43,19 @@ const page1 = () => {
    <>
      <form action="" onSubmit={singupdata} >
       <fieldset>
-        <legend>MyForm</legend>
+        <legend>Register YourSelf</legend>
         <input type="text" placeholder='Name'name='name' value={formData.name} onChange={handlechange}/> <br /> <br />
         <input type="text" placeholder='Email' name='email' value={formData.email} onChange={handlechange} /> <br /> <br />
         <input type="text" placeholder='Mobile' name='mobile' value={formData.mobile} onChange={handlechange} /> <br /> <br />
         <input type="text" placeholder='Password' name='password'  value={formData.password} onChange={handlechange} /> <br /> <br />
         <button>Submit</button>
-        <h1>Name:{formData.name}</h1>
+        {/* <h1>Name:{formData.name}</h1>
         <h2>Email:{formData.email}</h2>
         <h3>Mobile:{formData.mobile}</h3>
-        <h3>Password:{formData.password}</h3>
+        <h3>Password:{formData.password}</h3> */}
 
       </fieldset>
+      <p>Already have an account? <a href="/login">Login</a></p>
      </form>
    </>
   )
