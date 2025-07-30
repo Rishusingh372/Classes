@@ -8,7 +8,7 @@ import Dashboard from './component/Dashboard';
 import Admin from './component/Admin';
 import Login from './component/Login';
 import TaskfackApi from './component/TaskfackApi';
-
+import CURD from './component/CURD';
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
             <Route path="/admin" element={<Admin />} />
             <Route path="/task" element={<TaskfackApi />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/curd" element={<CURD />} />
           </Routes>
          </Router>
           

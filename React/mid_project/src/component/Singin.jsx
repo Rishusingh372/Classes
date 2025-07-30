@@ -1,5 +1,5 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { use } from 'react'
+import { useState , useEffect } from 'react'
 import '../mycss/style.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
@@ -8,6 +8,24 @@ import { useNavigate } from 'react-router-dom'
 const page1 = () => {
   let navigate= useNavigate();
   let baseurl="http://localhost:4001/user";
+
+  const [userdata, setuserdata] = useState([]);
+
+  const validatemail = async ()=>{
+    try {
+      let response = await axios.get(baseurl);
+      setuserdata(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+  useEffect(() => {
+    validatemail();
+  }, []);
+  // console.log(userdata);
+
+
 
   const [formData, setFormData] = useState({
     name: '',
@@ -30,8 +48,14 @@ const page1 = () => {
     e.preventDefault();
 
     try {
-      await axios.post(baseurl,formData)
-      navigate('/login',{state:formData})
+      if(userdata.find((e)=>e.email ==formData.email || e.mobile == formData.mobile)){
+        alert("Email already exists");
+        navigate('/login',{state:formData});
+  
+      }else{
+      await axios.post(baseurl,formData);
+      navigate('/login',{state:formData});
+      }
 
       
     } catch (error) {
