@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    name: <input type="text" id="user_name"/><br>
+    age: <input type="text" id="user_age"/><br>
+    <input type="submit" value="SIGNIN">
+    <input type="submit" value="clear" onclick="localStorage.clear()" /><br >
+
+
+    <script>
+        let user=JSON.parse(localStorage.getItem("user")) || [];
+        const user_data = (e)=>{
+            e.preventDefault();
+            const name = document.querySelector("#user_name").value;
+            const age = document.querySelector("#user_age").value;
+
+            let z={name,age};
+            user.push(z);
+
+               localStorage.setItem("user",JSON.stringify(user));
+               console.log(user);
+
+
+
+
+        }
+        document.querySelector("input[type='submit']").addEventListener("click",user_data);
+
+        
+
+    </script>
+</body>
+</html>

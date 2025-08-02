@@ -23,6 +23,7 @@ const Superdashboard = () => {
     //   console.log(initialdata)
 
     //delete function 
+
     const userDelete = async (id) => {
         let cnf = window.confirm("Are you sure you want to delete this user?");
         if (!cnf) return;
@@ -75,11 +76,6 @@ const Superdashboard = () => {
             password: user.password || ''
         })
     }
-
-
-
-
-
 
     return (
         <>
