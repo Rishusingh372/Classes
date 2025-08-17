@@ -1,12 +1,33 @@
 import { useState,useEffect,useRef,createContext} from 'react'
 import Child1 from './component/child1'
+import axios from 'axios';
+import { set } from 'mongoose';
+
 
 const myprovider = createContext();
 
 function App() {
+  let API_URL="http://localhost:4001/user";
   const [name, setname] = useState("hello world");
+  const [data, setdata] = useState([]);
   const [mobile, setmobile] = useState("1234567890");
 
+  const featchData = async () => {
+
+    try {
+      let res = await axios.get(API_URL);
+      setdata(res.data);
+      
+    } catch (error) {
+      console.log(error);
+      
+    }
+
+  }
+  useEffect(()=>{
+    featchData();
+  })
+  // console.log(data);
   // const [initialstate,finalstate] = useState(0)
   // let val = useRef(0);
   // let clr = useRef(null);
@@ -64,8 +85,8 @@ function App() {
 
         </div> */}
         <h3>main component</h3>
-        <myprovider.Provider value={{mobile,setmobile}}>
-            <Child1 val1={name} />
+        <myprovider.Provider value={data}>
+            <Child1  />
         </myprovider.Provider>
          
     </>
