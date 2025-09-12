@@ -98,3 +98,33 @@
 //     cout<<"Smallest element is "<<smallest<<" and its address is "<<smallestAddress<<endl;
 //     return 0;
 // }
+
+
+// ===============================================================================================================================
+// reverse an array
+
+// #include<iostream>
+// using namespace std;
+
+// int reverseArray(int arr[], int size){
+//     int start=0;
+//     int end=size-1;
+
+//     while(start<=end){
+//         swap(arr[start],arr[end]);
+//         start++;
+//         end--;
+//     }
+// }
+// int main(){
+//     int arr[]={5,12,22,1,-15,-24};
+//     int size=6;
+
+//     reverseArray(arr,size);
+
+//     for(int i=0;i<size;i++){
+//         cout<<arr[i]<<" ";
+//     }
+//     cout<<endl;
+//     return 0;
+// }
