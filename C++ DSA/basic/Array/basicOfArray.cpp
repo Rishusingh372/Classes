@@ -128,3 +128,76 @@
 //     cout<<endl;
 //     return 0;
 // }
+
+// ===============================================================================================================================
+
+// WAF to calculate the sum of all elements in an array.
+
+// #include <iostream>
+// using namespace std;
+
+// int sumOfArray(int arr[],int size){
+//     int sum=0;
+//     for(int i=0;i<size;i++){
+//         sum+=arr[i];
+//     }
+//     return sum;
+// }
+// int main(){
+//     int arr[]={5,12,22,1,-15,-24};
+//     int size=6;
+
+//     cout<<"The sum of all elements in the array is "<<sumOfArray(arr,size)<<endl;
+
+//     return 0;
+// }
+
+
+// ===============================================================================================================================
+// Waf To swap The max and min element of an array
+
+// #include <iostream>
+// using namespace std;
+// void swapMaxMin(int arr[], int size) {
+//     if (size <= 0) return; // Handle empty array case
+
+//     int maxIndex = 0;
+//     int minIndex = 0;
+
+//     for (int i = 1; i < size; i++) {
+//         if (arr[i] > arr[maxIndex]) {
+//             maxIndex = i;
+//         }
+//         if (arr[i] < arr[minIndex]) {
+//             minIndex = i;
+//         }
+//     }
+
+//     // Swap the max and min elements
+//     swap(arr[maxIndex], arr[minIndex]);
+// }
+// int main() {
+//     int arr[] = {5, 12, 22, 1, -15, -24};
+//     int size = 6;
+
+//     swapMaxMin(arr, size);
+
+//     cout << "Array after swapping max and min elements: ";
+//     for (int i = 0; i < size; i++) {
+//         cout << arr[i] << " ";
+//     }
+//     cout << endl;
+
+//     return 0;
+// }
+
+
+// ==============================================================================================================================
+// WAF to print all the unique value of an array
+
+
+// ==============================================================================================================================
+// WAF to print the frequency of each element in an array  
+
+// ==============================================================================================================================
+// WAF to print the intersection of two arrays
