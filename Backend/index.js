@@ -8,7 +8,17 @@ const http = require('http');
 // create a server using the http module
 
 const server = http.createServer((req, res) => {
-  res.write("I am From http server");
+//   res.write("I am From http server");  //normal data
+
+
+// for json data
+  res.writeHead(200, {'Content-Type': 'application/json'});
+  const data = {
+    name: "Rishu",
+    job: "Developer",
+    age: 21
+  }
+  res.write(JSON.stringify(data));
   res.end();
 });
 
