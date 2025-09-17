@@ -194,10 +194,63 @@
 
 // ==============================================================================================================================
 // WAF to print all the unique value of an array
+#include <iostream>
+using namespace std;
+void printUnique(int arr[], int size) {
+    cout << "Unique elements in the array: ";
+    for (int i = 0; i < size; i++) {
+        bool isUnique = true;
+        for (int j = 0; j < size; j++) {
+            if (i != j && arr[i] == arr[j]) {
+                isUnique = false;
+                break;
+            }
+        }
+        if (isUnique) {
+            cout << arr[i] << " ";
+        }
+    }
+    cout << endl;
+}
+int main() {
+    int arr[] = {5, 12, 22, 1, -15, -24, 12, 5};
+    int size = 8;
+
+    printUnique(arr, size);
+
+    return 0;
+}
 
 
 // ==============================================================================================================================
 // WAF to print the frequency of each element in an array  
+#include <iostream>
+using namespace std;
+void printFrequency(int arr[], int size) {
+    bool visited[size] = {false};
+
+    cout << "Element frequencies in the array:\n";
+    for (int i = 0; i < size; i++) {
+        if (visited[i]) continue;
+
+        int count = 1;
+        for (int j = i + 1; j < size; j++) {
+            if (arr[i] == arr[j]) {
+                count++;
+                visited[j] = true;
+            }
+        }
+        cout << arr[i] << ": " << count << endl;
+    }
+}
+int main() {
+    int arr[] = {5, 12, 22, 1, -15, -24, 12, 5};
+    int size = 8;
+
+    printFrequency(arr, size);
+
+    return 0;
+}
 
 // ==============================================================================================================================
 // WAF to print the intersection of two arrays 
