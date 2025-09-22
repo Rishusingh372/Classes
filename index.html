@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CellStart ChronoNAD+ | Cellular Renewal Supplement</title>
+    <title>CellStart ChronoNAD+ | Premium Cellular Renewal Supplement</title>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600;700&family=Poppins:wght@600;700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles */
+        html{
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -19,6 +25,8 @@
             --accent-color: #4CAF50;
             --light-bg: #f8f9fa;
             --white: #ffffff;
+            --dark-blue: #001a33;
+            --light-blue: #e6f0ff;
         }
         
         body {
@@ -80,6 +88,17 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
         section {
             padding: 80px 0;
         }
@@ -110,6 +129,26 @@
             font-weight: 700;
             font-size: 1.8rem;
             color: var(--header-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--header-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
         }
         
         /* Hero Section */
@@ -204,8 +243,8 @@
         
         .bar-label {
             position: absolute;
-            right: -80px;
-            top: 50%;
+            right: -20px;
+            top: -20%;
             transform: translateY(-50%);
             font-weight: bold;
         }
@@ -225,12 +264,291 @@
             margin-top: 20px;
         }
         
+        /* NAD+ Decline Section */
+        .nad-decline {
+            background-color: var(--white);
+        }
+        
+        .decline-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .decline-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .decline-chart {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-blue);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            height: 250px;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        .chart-bar {
+            width: 50px;
+            background: linear-gradient(to top, var(--text-color), var(--header-color));
+            border-radius: 5px 5px 0 0;
+            position: relative;
+        }
+        
+        .chart-bar-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+        }
+        
+        .chart-y-axis {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .chart-y-label {
+            font-size: 0.8rem;
+        }
+        
+        /* Product Section */
+        .product {
+            background: linear-gradient(135deg, rgba(0,87,198,0.1) 0%, rgba(0,47,92,0.2) 100%);
+        }
+        
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .product-features {
+            margin: 20px 0;
+        }
+        
+        .product-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--accent-color);
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--header-color);
+            margin: 20px 0;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: linear-gradient(135deg, rgba(0,87,198,0.1) 0%, rgba(0,47,92,0.2) 100%);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--header-color);
             color: white;
-            padding: 40px 0;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .footer-bottom {
             text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
         .footer-logo {
@@ -238,6 +556,7 @@
             font-weight: 700;
             font-size: 1.8rem;
             margin-bottom: 20px;
+            display: block;
         }
         
         /* Responsive Design */
@@ -254,8 +573,21 @@
                 padding: 120px 0 80px;
             }
             
-            .science-content {
+            .science-content, .decline-content, .product-container, .about-content, .contact-container {
                 flex-direction: column;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                font-size: 1.5rem;
+                background: none;
+                border: none;
+                color: var(--header-color);
+                cursor: pointer;
             }
         }
     </style>
@@ -266,18 +598,26 @@
         <div class="header-container container">
             <div class="logo">CellStart<sup>®</sup></div>
             <nav>
-                <a href="#" class="btn">Shop Now</a>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#science">Science</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </nav>
+            <a href="#product" class="btn">Shop Now</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <h1>Unlock Your Cellular Potential</h1>
                 <p>ChronoNAD+ is a revolutionary dietary supplement designed to restore your NAD+ levels, helping you feel more vibrant and energized.</p>
-                <a href="#" class="btn">Discover The Formula</a>
+                <a href="#product" class="btn">Discover The Formula</a>
             </div>
         </div>
     </section>
@@ -290,25 +630,72 @@
             
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
                     <h3>Energy Production</h3>
                     <p>NAD+ is a key driver of metabolism, helping your body turn food into stable energy for every cell.</p>
                 </div>
                 
                 <div class="benefit-card">
-                    <div class="benefit-icon">🔧</div>
+                    <div class="benefit-icon"><i class="fas fa-tools"></i></div>
                     <h3>DNA Repair</h3>
                     <p>It helps power your body's natural processes to fix damaged DNA and keep your cells healthy.</p>
                 </div>
                 
                 <div class="benefit-card">
-                    <div class="benefit-icon">🛡️</div>
+                    <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Cellular Defense</h3>
                     <p>NAD+ activates important "longevity genes" that help your body fight off stress and maintain overall cellular wellness.</p>
                 </div>
             </div>
             
             <p class="source text-center">Source: Covarnibiss et al., Miave Reviews Molecular Cell Biology, 2021.</p>
+        </div>
+    </section>
+
+    <!-- NAD+ Decline Section -->
+    <section class="nad-decline" id="science">
+        <div class="container">
+            <h2 class="text-center">NAD+ Declines With Age</h2>
+            <p class="text-center">By middle age, our NAD+ levels can plummet to half of what they were in our youth.</p>
+            
+            <div class="decline-content">
+                <div class="decline-text">
+                    <h3>The Science Behind Cellular Aging</h3>
+                    <p>Research has shown that NAD+ levels decline significantly as we age. This decline is associated with reduced cellular energy production, impaired DNA repair, and decreased resistance to stress.</p>
+                    <p>ChronoNAD+ is specifically formulated to combat this decline and support your body's natural NAD+ production.</p>
+                    <p class="source">Source: Massudi et al., PLoS ONE, 2012; Jinfiniti Health Report.</p>
+                </div>
+                
+                <div class="decline-chart">
+                    <h3 class="text-center">NAD+ Decline by Age</h3>
+                    <div class="chart-bars">
+                        <div class="chart-y-axis">
+                            <span class="chart-y-label">100%</span>
+                            <span class="chart-y-label">80%</span>
+                            <span class="chart-y-label">60%</span>
+                            <span class="chart-y-label">40%</span>
+                            <span class="chart-y-label">20%</span>
+                            <span class="chart-y-label">0%</span>
+                        </div>
+                        
+                        <div class="chart-bar" style="height: 95%;">
+                            <span class="chart-bar-label">20s</span>
+                        </div>
+                        
+                        <div class="chart-bar" style="height: 70%;">
+                            <span class="chart-bar-label">30s-40s</span>
+                        </div>
+                        
+                        <div class="chart-bar" style="height: 45%;">
+                            <span class="chart-bar-label">50s-60s</span>
+                        </div>
+                        
+                        <div class="chart-bar" style="height: 35%;">
+                            <span class="chart-bar-label">70s+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -326,6 +713,7 @@
                         <li>Boosts NAD+ function for enhanced cellular health</li>
                         <li>Provides superior cellular defense and energy production</li>
                     </ul>
+                    <a href="#product" class="btn">Try ChronoNAD+</a>
                 </div>
                 
                 <div class="science-visual">
@@ -344,11 +732,234 @@
         </div>
     </section>
 
+    <!-- Product Section -->
+    <section class="product" id="product">
+        <div class="container">
+            <h2 class="text-center">ChronoNAD+ Formula</h2>
+            <p class="text-center">Our advanced formula combines NAD+ with Resveratrol for maximum cellular benefits.</p>
+            
+            <div class="product-container">
+                <div class="product-image">
+                    <h3>ChronoNAD+</h3>
+                    <div style="background: linear-gradient(135deg, #002f5c, #0057c6); height: 200px; width: 200px; margin: 20px auto; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
+                        <span style="font-size: 1.5rem; font-weight: bold;">CellStart</span>
+                        <span style="font-size: 2rem; font-weight: bold;">CHRONO</span>
+                        <span style="font-size: 2.5rem; font-weight: bold;">NAD+</span>
+                    </div>
+                    <p>DIETARY SUPPLEMENT • 60 CAPSULES</p>
+                </div>
+                
+                <div class="product-details">
+                    <h3>Premium Cellular Support</h3>
+                    <p>ChronoNAD+ is a once-daily dietary supplement designed to restore NAD+ levels, helping you feel more vibrant and energized.</p>
+                    
+                    <div class="product-features">
+                        <div class="product-feature">
+                            <div class="feature-icon"><i class="fas fa-dna"></i></div>
+                            <span>Protects DNA and supports cellular health</span>
+                        </div>
+                        <div class="product-feature">
+                            <div class="feature-icon"><i class="fas fa-battery-full"></i></div>
+                            <span>Boosts energy production at the cellular level</span>
+                        </div>
+                        <div class="product-feature">
+                            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                            <span>Supports healthy aging and longevity</span>
+                        </div>
+                        <div class="product-feature">
+                            <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                            <span>Enhanced with Resveratrol for maximum efficacy</span>
+                        </div>
+                    </div>
+                    
+                    <div class="price">$89.99 <span style="font-size: 1rem; color: #666; text-decoration: line-through;">$99.99</span></div>
+                    
+                    <a href="#" class="btn">Add to Cart</a>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="text-center">About CellStart</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>CellStart was founded with a simple mission: to develop scientifically-backed supplements that support cellular health and promote healthy aging.</p>
+                    <p>Our team of researchers and scientists are dedicated to creating innovative formulas that address the root causes of aging at the cellular level.</p>
+                    <p>We believe that everyone deserves to live a vibrant, energetic life, and our products are designed to support that goal.</p>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                </div>
+                
+                <div class="about-image">
+                    <div style="background: linear-gradient(45deg, #002f5c, #4CAF50); height: 300px; width: 100%; border-radius: 10px; display: flex; justify-content: center; align-items: center; color: white; font-size: 2rem; font-weight: bold;">
+                        CellStart®
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is NAD+ and why is it important?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>NAD+ (Nicotinamide Adenine Dinucleotide) is a coenzyme found in all living cells. It's essential for energy production, DNA repair, and cellular communication. As we age, our NAD+ levels decline, which can lead to reduced cellular function and energy.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does ChronoNAD+ work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ChronoNAD+ provides your body with the precursors needed to produce NAD+. Our unique formula includes Resveratrol, which enhances NAD+ production and activation of longevity genes called sirtuins.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long until I see results?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most users report feeling increased energy levels within the first 2-3 weeks of consistent use. For optimal cellular benefits, we recommend taking ChronoNAD+ for at least 90 days.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is ChronoNAD+ safe?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, ChronoNAD+ is made with high-quality ingredients and manufactured in FDA-registered facilities. However, if you have specific health conditions or are taking medication, we recommend consulting with your healthcare provider before use.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is your return policy?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day money-back guarantee. If you're not satisfied with your results, you can return the product for a full refund, no questions asked.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <p class="text-center">Have questions? We're here to help!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Our customer support team is available to answer any questions you may have about our products.</p>
+                    
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> support@cellstart.com</p>
+                        <p><i class="fas fa-phone"></i> 1-800-CELLSTART</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Science Park Dr, Innovation City</p>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-logo">CellStart<sup>®</sup></div>
-            <p>© 2023 CellStart. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <span class="footer-logo">CellStart<sup>®</sup></span>
+                    <p>Advanced cellular nutrition for a vibrant, energetic life.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">ChronoNAD+</a></li>
+                        <li><a href="#">Mitochondrial Support</a></li>
+                        <li><a href="#">Cellular Defense</a></li>
+                        <li><a href="#">All Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Science</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2023 CellStart. All rights reserved. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+            </div>
         </div>
     </footer>
 
@@ -375,6 +986,19 @@
             if (scienceVisual) {
                 observer.observe(scienceVisual);
             }
+            
+            // FAQ toggle functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    answer.classList.toggle('active');
+                    
+                    const icon = question.querySelector('i');
+                    icon.classList.toggle('fa-chevron-down');
+                    icon.classList.toggle('fa-chevron-up');
+                });
+            });
         });
     </script>
 </body>
