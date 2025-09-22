@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CellStart ChronoNAD+ | Cellular Renewal Supplement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600;700&family=Poppins:wght@600;700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --header-color: #002f5c;
+            --text-color: #0057c6;
+            --accent-color: #4CAF50;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cabin', sans-serif;
+            color: var(--header-color);
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn:hover {
+            background-color: #3d8b40;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--header-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0,87,198,0.1) 0%, rgba(0,47,92,0.2) 100%);
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            background-color: var(--white);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-card {
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        /* Science Section */
+        .science {
+            background: linear-gradient(135deg, rgba(0,87,198,0.1) 0%, rgba(0,47,92,0.2) 100%);
+        }
+        
+        .science-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .science-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .science-visual {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .graph-container {
+            margin: 30px 0;
+        }
+        
+        .graph-bar {
+            height: 30px;
+            margin: 15px 0;
+            border-radius: 5px;
+            position: relative;
+            background: linear-gradient(90deg, var(--text-color) 0%, var(--header-color) 100%);
+        }
+        
+        .bar-label {
+            position: absolute;
+            right: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+        }
+        
+        .bar-1 {
+            width: 65%;
+        }
+        
+        .bar-2 {
+            width: 100%;
+        }
+        
+        .source {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--header-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding: 120px 0 80px;
+            }
+            
+            .science-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">CellStart<sup>®</sup></div>
+            <nav>
+                <a href="#" class="btn">Shop Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Unlock Your Cellular Potential</h1>
+                <p>ChronoNAD+ is a revolutionary dietary supplement designed to restore your NAD+ levels, helping you feel more vibrant and energized.</p>
+                <a href="#" class="btn">Discover The Formula</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="text-center">Why Is NAD+ Your Cellular Fuel?</h2>
+            <p class="text-center">NAD+ is essential for cellular health and energy production. As we age, our NAD+ levels decline, impacting our vitality.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Energy Production</h3>
+                    <p>NAD+ is a key driver of metabolism, helping your body turn food into stable energy for every cell.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔧</div>
+                    <h3>DNA Repair</h3>
+                    <p>It helps power your body's natural processes to fix damaged DNA and keep your cells healthy.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Cellular Defense</h3>
+                    <p>NAD+ activates important "longevity genes" that help your body fight off stress and maintain overall cellular wellness.</p>
+                </div>
+            </div>
+            
+            <p class="source text-center">Source: Covarnibiss et al., Miave Reviews Molecular Cell Biology, 2021.</p>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section class="science">
+        <div class="container">
+            <h2 class="text-center">The 1.7x Advantage</h2>
+            <p class="text-center">Research shows that combining NAD+ with Resveratrol can boost NAD+ levels in our body up to 1.7x higher than using NAD+ alone.</p>
+            
+            <div class="science-content">
+                <div class="science-text">
+                    <h3>How They Work Together</h3>
+                    <ul>
+                        <li><strong>Resveratrol</strong> activates "longevity" genes</li>
+                        <li>Boosts NAD+ function for enhanced cellular health</li>
+                        <li>Provides superior cellular defense and energy production</li>
+                    </ul>
+                </div>
+                
+                <div class="science-visual">
+                    <h3>Increase in NAD+ in Key Tissues*</h3>
+                    <div class="graph-container">
+                        <div class="graph-bar bar-1">
+                            <span class="bar-label">NAD+ Alone: 65%</span>
+                        </div>
+                        <div class="graph-bar bar-2">
+                            <span class="bar-label">NAD+ with Resveratrol: 100%</span>
+                        </div>
+                    </div>
+                    <p class="source">Source: Jiang et al., Pharmacology Research & Perspectives, 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">CellStart<sup>®</sup></div>
+            <p>© 2023 CellStart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for graph bars
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bars = entry.target.querySelectorAll('.graph-bar');
+                        bars.forEach(bar => {
+                            bar.style.width = '0';
+                            setTimeout(() => {
+                                bar.style.transition = 'width 1.5s ease-in-out';
+                                bar.style.width = bar.classList.contains('bar-1') ? '65%' : '100%';
+                            }, 200);
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            // Observe the science visual section
+            const scienceVisual = document.querySelector('.science-visual');
+            if (scienceVisual) {
+                observer.observe(scienceVisual);
+            }
+        });
+    </script>
+</body>
+</html>
