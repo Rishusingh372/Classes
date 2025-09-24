@@ -7,8 +7,9 @@ const mongoose = require('mongoose');
 app.use(express.json());
 app.use(express.urlencoded());
 
+
 // database
-mongoose.connect('mongodb://localhost:27017/testdb')
+mongoose.connect('mongodb://localhost:27017/test1')
 .then(() => {
   console.log('Connected to MongoDB');
 })
@@ -21,42 +22,24 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
-
 // insert data
 app.post('/add',(req,res)=>{
   const {name,age,contact}=req.body;
-  const newUser=new model({
+    const newUser=new model({
     name,age,contact
-  })
-  newUser.save()
-  res.send("data added")
-})
+    })
+    newUser.save()
+    res.send("data added")
+});
 
 // get data
 app.get('/get', async(req,res)=>{
   const users= await model.find()
   res.json(users)
-})
+});
 
-// delete data
-app.delete('/delete/:id', async(req,res)=>{
-  const {id}=req.params;
-  await model.findByIdAndDelete(id)
-  res.send("data deleted")
-})
-  
-// // params
-// app.get('/user/:name/:contact', (req, res) => {
-//    res.send("working")
-//    console.log(req.params);
-// });
 
-// // query
-// app.get('/demo', (req, res) => {
-//    res.send("working")
-//    console.log(req.query);
-// });
 
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000');
+app.listen(3200, () => {
+  console.log('Server is running on http://localhost:3200');
 }); 
