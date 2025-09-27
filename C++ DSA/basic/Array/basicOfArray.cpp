@@ -254,3 +254,27 @@ int main() {
 
 // ==============================================================================================================================
 // WAF to print the intersection of two arrays 
+#include <iostream>
+using namespace std;
+void printIntersection(int arr1[], int size1, int arr2[], int size2) {
+    cout << "Intersection of the two arrays: ";
+    for (int i = 0; i < size1; i++) {
+        for (int j = 0; j < size2; j++) {
+            if (arr1[i] == arr2[j]) {
+                cout << arr1[i] << " ";
+                break; // To avoid printing duplicates from arr2
+            }
+        }
+    }
+    cout << endl;
+}   
+int main() {
+    int arr1[] = {5, 12, 22, 1, -15, -24};
+    int arr2[] = {12, -15, 30, 45};
+    int size1 = 6;
+    int size2 = 4;
+
+    printIntersection(arr1, size1, arr2, size2);
+
+    return 0;
+}
