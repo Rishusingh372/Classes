@@ -58,12 +58,52 @@
 
 
 
+// const http = require("http");
+
+// http.createServer((req,res)=>{
+//    res.write("<h1>Welcom Node Js Classes</h1>")
+//    res.end("<h3>server end....</h3>")
+// })
+// .listen(9000)
+
+// ====================================================================================
+
+// Day -2 MP Nagar Cybrom
+// userdefined module
+// const http = require("http");
+// const clg = require("./cybrom");
+
+// http.createServer((req,res)=>{
+//    res.write("<h1>Welcom To cybrom Classes :- </h1>")
+//    res.write(clg.myCollege())
+//    res.write(clg.mySubject())
+//    res.write(clg.myFee())
+//    res.end()
+// })
+// .listen(8000 , ()=>{
+//    console.log("Server is running on port 8000");
+// })
+
+
+// ===========================================================================================
+
+// pre-defined module
+// fs module :- file system module
+// it is used to handle the file system in node js
+// it is a built-in module in node js
+// it is used to read, write, update, delete files
+
+
 const http = require("http");
+const fs = require("fs");  
 
 http.createServer((req,res)=>{
-   res.write("<h1>Welcom Node Js Classes</h1>")
-   res.end("<h3>server end....</h3>")
+   res.write("<h1>File System Module</h1>")
+   fs.readFile("rishu.txt" , "utf-8" , (err,data)=>{
+      if(err) throw err;
+      res.write(data);
+      res.end();
+   })
+}).listen(8000 , ()=>{
+   console.log("Server is running on port 8000");
 })
-.listen(9000)
-
-

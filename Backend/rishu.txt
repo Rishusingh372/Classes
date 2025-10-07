@@ -1,0 +1,219 @@
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (C:\Users\rishu\OneDrive\Desktop\cpp\Backend\index.js:73:13)
+
+Node.js v22.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+C:\Users\rishu\OneDrive\Desktop\cpp\Backend\cybrom.js:4
+const mySubject=()
+                 ^
+
+SyntaxError: Unexpected token ''
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (C:\Users\rishu\OneDrive\Desktop\cpp\Backend\index.js:73:13)
+
+Node.js v22.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+C:\Users\rishu\OneDrive\Desktop\cpp\Backend\cybrom.js:8
+module.exports={myCollege};
+^
+
+SyntaxError: Identifier 'module' has already been declared
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (C:\Users\rishu\OneDrive\Desktop\cpp\Backend\index.js:73:13)
+
+Node.js v22.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+C:\Users\rishu\OneDrive\Desktop\cpp\Backend\cybrom.js:7
+const my
+      ^^
+
+SyntaxError: Missing initializer in const declaration
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (C:\Users\rishu\OneDrive\Desktop\cpp\Backend\index.js:73:13)
+
+Node.js v22.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+C:\Users\rishu\OneDrive\Desktop\cpp\Backend\cybrom.js:7
+const myFee
+      ^^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (C:\Users\rishu\OneDrive\Desktop\cpp\Backend\index.js:73:13)
+
+Node.js v22.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+C:\Users\rishu\OneDrive\Desktop\cpp\Backend\cybrom.js:7
+const myFee=()
+             ^
+
+SyntaxError: Unexpected token ')'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (C:\Users\rishu\OneDrive\Desktop\cpp\Backend\index.js:73:13)
+
+Node.js v22.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+C:\Users\rishu\OneDrive\Desktop\cpp\Backend\cybrom.js:10
+module.exports={myCollege,m};
+                          ^
+
+ReferenceError: m is not defined
+    at Object.<anonymous> (C:\Users\rishu\OneDrive\Desktop\cpp\Backend\cybrom.js:10:27)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (C:\Users\rishu\OneDrive\Desktop\cpp\Backend\index.js:73:13)
+
+Node.js v22.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+Server is running on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+[nodemon] clean exit - waiting for changes before restart
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+C:\Users\rishu\OneDrive\Desktop\cpp\Backend\index.js:85
+\
+^
+
+SyntaxError: Invalid or unexpected token
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+    at node:internal/main/run_main_module:36:49
+
+Node.js v22.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+[nodemon] clean exit - waiting for changes before restart
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+[nodemon] clean exit - waiting for changes before restart
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+[nodemon] clean exit - waiting for changes before restart
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+[nodemon] clean exit - waiting for changes before restart
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+[nodemon] clean exit - waiting for changes before restart
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+[nodemon] clean exit - waiting for changes before restart
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+[nodemon] clean exit - waiting for changes before restart
