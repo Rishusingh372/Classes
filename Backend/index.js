@@ -94,16 +94,66 @@
 // it is used to read, write, update, delete files
 
 
-const http = require("http");
-const fs = require("fs");  
+// const http = require("http");
+// const fs = require("fs");  
 
-http.createServer((req,res)=>{
-   res.write("<h1>File System Module</h1>")
-   fs.readFile("rishu.txt" , "utf-8" , (err,data)=>{
-      if(err) throw err;
-      res.write(data);
-      res.end();
-   })
-}).listen(8000 , ()=>{
-   console.log("Server is running on port 8000");
+// http.createServer((req,res)=>{
+//    res.write("<h1>File System Module</h1>")
+//    fs.readFile("rishu.txt" , "utf-8" , (err,data)=>{
+//       if(err) throw err;
+//       res.write(data);
+//       res.end();
+//    })
+// }).listen(8000 , ()=>{
+//    console.log("Server is running on port 8000");
+// })
+
+
+// ================================================================
+// create file using http 
+
+const fs = require("fs");
+
+// append file using http :-> it will create a file if it is not present and if it is present then it will append the data to the file
+// fs.appendFile("raj.txt" , "I am from rishu file" , (err)=>{
+//    if(err) throw err;
+//    console.log("File created successfully");
+// })
+
+
+// open file using http :-> it will create a file if it is not present and if it is present then it will open the file
+// fs.open("raj.txt" , "r" , (err,file)=>{
+//    if(err) throw err;
+//    console.log("File opened successfully");
+// })
+
+
+// write file using http :-> it will create a file if it is not present and if it is present then it will overwrite the data to the file
+// fs.writeFile("raju.txt" , "I am from raju file" , (err)=>{
+//    if(err) throw err;
+//    console.log("File written successfully");
+// })
+
+
+
+// update file using method like append file and write file
+
+//  Delet file using http :-> it will delete the file if it is present
+// unlink method is used to delete the file
+
+
+
+// fs.unlink("raju.txt" , (err)=>{
+//    if(err) throw err;
+//    console.log("File deleted successfully");
+// })
+
+// rename file using http :-> it will rename the file if it is present
+fs.rename("raju.pdf" , "raju.js" , (err)=>{
+   if(err) throw err;
+   console.log("File renamed successfully");
 })
+
+
+
+
