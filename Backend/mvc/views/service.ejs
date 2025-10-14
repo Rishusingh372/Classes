@@ -25,7 +25,24 @@
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id eum quia, earum incidunt harum blanditiis, enim, placeat eaque quas vitae aut. Velit officia deserunt eligendi, est aut quos consequuntur voluptate!
 
     </p>
+    <h2 >Student Data</h2>
+    <table border="1px"  cellpadding="10px" cellspacing="0px" >
+        <tr bgcolor="red">
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Fee</th>
+        </tr>
+        <% Data.forEach((student) => { %>
+            <tr bgcolor="lightblue">
+                <td><%= student.rollNo %></td>
+                <td><%= student.name %></td>
+                <td><%= student.city %></td>
+                <td><%= student.fee %></td>
+            </tr>
+        <% }); %>
 
+    </table>
 
 </body>
 

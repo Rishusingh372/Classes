@@ -2,22 +2,24 @@
 // const { assign } = require("nodemailer/lib/shared");
 const Student = require('../models/stuModel');
 
-const homepage = ("/home", (req, res) => {
+const homepage = (req, res) => {
    res.render('home')
-})
+};
 
-const aboutpage = ("/about", (req, res) => {
+const aboutpage =(req, res) => {
    res.render('about')
-})
-const servicepage = ("/service", (req, res) => {
-   res.render('service')
-});
-const joinpage = ("/join", (req, res) => {
+};
+const servicepage = async  (req, res) => {
+   const students = await Student.find();
+   // console.log(students);
+   res.render('service',{Data:students})
+};
+const joinpage =  (req, res) => {
    res.render('join')
-});
-const contactpage = ("/contact", (req, res) => {
+};
+const contactpage = (req, res) => {
    res.render('contact')
-});
+};
 
 // const saveStudent = async(req, res) => {
 //    console.log(req.body);
@@ -40,7 +42,7 @@ const contactpage = ("/contact", (req, res) => {
 
 const saveStudent = async (req, res) => {
    const{ rn, nm, ct, fs } = req.body;
-   console.log(req.body);
+   // console.log(req.body);
 
    try {
       const student = await Student.create({
