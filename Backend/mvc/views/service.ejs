@@ -32,13 +32,16 @@
             <th>Name</th>
             <th>City</th>
             <th>Fee</th>
+            <th>Delete / Edit </th>
         </tr>
         <% Data.forEach((student) => { %>
-            <tr bgcolor="lightblue">
+            <tr >
                 <td><%= student.rollNo %></td>
                 <td><%= student.name %></td>
                 <td><%= student.city %></td>
                 <td><%= student.fee %></td>
+                <td bgcolor="red"> <a href=" /students/edit?id=<%= student._id %>">Edit </a> / <a href="/students/delete?id=<%= student._id %>"> Delete</a></td>
+                
             </tr>
         <% }); %>
 

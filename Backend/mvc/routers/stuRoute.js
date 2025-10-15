@@ -10,5 +10,7 @@ router.get('/service', stuController.servicepage);
 router.get('/join', stuController.joinpage);
 router.get('/contact', stuController.contactpage);
 router.post('/save', stuController.saveStudent);
+router.get('/delete', stuController.deleteStudent);
+router.get('/edit',stuController.editStudent); 
 
 module.exports = router;

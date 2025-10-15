@@ -58,6 +58,19 @@ const saveStudent = async (req, res) => {
    }
 }
 
+const deleteStudent = async(req,res)=>{
+   const {id} = req.query;
+   const students = await Student.findByIdAndDelete(id);
+   const stuData = await Student.find();
+   res.render('service',{Data:stuData});
+   // res.redirect('/students/service');   that also use 
+}
+
+const editStudent = async(req,res)=>{
+   const {id} = req.query;
+   const student = await Student.findById(id);
+   console.log(student);
+}
   
 
 module.exports = {
@@ -66,6 +79,8 @@ module.exports = {
    servicepage,
    joinpage,
    contactpage,
-   saveStudent
+   saveStudent,
+   deleteStudent,
+   editStudent
 
 }
