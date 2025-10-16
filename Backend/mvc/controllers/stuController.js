@@ -70,7 +70,29 @@ const editStudent = async(req,res)=>{
    const {id} = req.query;
    const student = await Student.findById(id);
    console.log(student);
+   res.render('edit',{Data:student});
 }
+const editdataSave = async (req, res) => {
+    const { id, rno, nm, ct, fs } = req.body;
+
+    const Student = await Student.findByIdAndUpdate(id, {
+         rollNo: rno,
+         name: nm,
+         city: ct,
+         fee: fs
+    })
+
+      const Student1 = await Student.find();
+    res.render("service", { Data: Student1 });
+}
+
+
+const dataSearch = async (req, res) => {
+    const { rno } = req.body;
+    const Student = await Student.find({ rollNo: rno });
+    res.render("serach", { Data: Student });
+}
+
   
 
 module.exports = {
@@ -81,6 +103,8 @@ module.exports = {
    contactpage,
    saveStudent,
    deleteStudent,
-   editStudent
+   editStudent,
+   editdataSave,
+   dataSearch
 
 }

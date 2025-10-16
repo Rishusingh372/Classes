@@ -26,13 +26,20 @@
 
     </p>
 
-    <form method="post" action="/students/save" >
-    Enter Roll No<input type="text" name="rn"><br>
-    Enter Name<input type="text" name="nm"><br>
-    Enter City<input type="text" name="ct"> <br>
-    Enter fee<input type="text" name="fs"> <br>
-    <button>Submit</button>
-    </form>
+      <h2> Edit Student Records </h2>
+
+       <form method="post" action="/students/editsave">
+          <input type="hidden" name="id"  value="<%= Data._id %>" name="id">
+         Edit Rollno :<input type="text"  value="<%= Data.rollno %>" name="rno">
+         <br>
+          Edit Name :<input type="text"  value="<%= Data.name %>" name="nm">
+         <br>
+          Edit City :<input type="text"  value="<%= Data.city %>" name="ct">
+         <br>
+          Edit Fees :<input type="text"  value="<%= Data.fees %>" name="fs">
+         <br>
+         <button>Edit Save!</button>
+       </form>
 
 
 </body>

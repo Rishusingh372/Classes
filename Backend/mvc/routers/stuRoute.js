@@ -1,16 +1,18 @@
 const express = require('express');
-const router = express.Router();
+const route = express.Router();
 const stuController = require('../controllers/stuController');
 
 
 
-router.get('/home', stuController.homepage);
-router.get('/about', stuController.aboutpage);
-router.get('/service', stuController.servicepage);
-router.get('/serach', stuController.serachpage);
-router.get('/contact', stuController.contactpage);
-router.post('/save', stuController.saveStudent);
-router.get('/delete', stuController.deleteStudent);
-router.get('/edit',stuController.editStudent); 
+route.get('/home', stuController.homepage);
+route.get('/about', stuController.aboutpage);
+route.get('/service', stuController.servicepage);
+route.get('/serach', stuController.serachpage);
+route.get('/contact', stuController.contactpage);
+route.post('/save', stuController.saveStudent);
+route.get('/delete', stuController.deleteStudent);
+route.get('/edit',stuController.editStudent); 
+route.post("/editsave", stuController.editdataSave);
+route.post("/search", stuController.dataSearch);
 
-module.exports = router;
+module.exports = route;
