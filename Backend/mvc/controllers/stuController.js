@@ -14,8 +14,8 @@ const servicepage = async  (req, res) => {
    // console.log(students);
    res.render('service',{Data:students})
 };
-const joinpage =  (req, res) => {
-   res.render('join')
+const serachpage =  (req, res) => {
+   res.render('serach')
 };
 const contactpage = (req, res) => {
    res.render('contact')
@@ -77,7 +77,7 @@ module.exports = {
    homepage,
    aboutpage,
    servicepage,
-   joinpage,
+   serachpage,
    contactpage,
    saveStudent,
    deleteStudent,

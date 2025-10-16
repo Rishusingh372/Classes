@@ -7,7 +7,7 @@ const stuController = require('../controllers/stuController');
 router.get('/home', stuController.homepage);
 router.get('/about', stuController.aboutpage);
 router.get('/service', stuController.servicepage);
-router.get('/join', stuController.joinpage);
+router.get('/serach', stuController.serachpage);
 router.get('/contact', stuController.contactpage);
 router.post('/save', stuController.saveStudent);
 router.get('/delete', stuController.deleteStudent);
