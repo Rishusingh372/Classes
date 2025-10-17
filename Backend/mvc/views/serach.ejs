@@ -25,9 +25,10 @@
        <form method="post" action="/students/search">
         Enter Rollno : <input type="text" name="rno" >
           <button>Search</button>
-        </form>  
-        <hr soze="red" >
-        
+        </form>
+        <hr>
+
+    <% if (Data && Data.length > 0) { %>
          <table width="600" align="center" bgcolor="pink">
         <tr bgcolor="orange">
             <th> Rollno </th>
@@ -35,7 +36,6 @@
             <th> City </th>
             <th> Fees </th>
         </tr>
-    <% if (Data && Data.length > 0) { %>
     <% Data.forEach((student)=>{ %>
         <tr>
             <td>  <%= student.rollNo %></td>
@@ -44,8 +44,10 @@
             <td>  <%= student.fee %> </td>
         </tr>
         <% }) %>
-    <% } %>
     </table>
+    <% } else { %>
+        <p>No student found with the given roll number.</p>
+    <% } %>
 
 
 </body>
