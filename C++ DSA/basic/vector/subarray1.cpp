@@ -65,3 +65,25 @@
 //     cout << "Maximum Subarray Sum is: " << maxSum << endl;
 //     return 0;
 // }
+
+// find maximum subarray sum using kadane's algorithm (handling all negative numbers)
+#include <iostream>
+#include <vector>
+using namespace std;
+int main(){
+    vector<int> arr = {-2,-3,-1,-4};
+    int n = arr.size();
+    int maxSum = INT32_MIN;
+    int currSum = 0;
+    for(int i=0; i<n; i++){
+        currSum += arr[i];
+        if(currSum > maxSum){
+            maxSum = currSum;
+        }
+        if(currSum < 0){
+            currSum = 0;
+        }
+    }
+    cout << "Maximum Subarray Sum is: " << maxSum << endl;
+    return 0;
+}
