@@ -1,32 +1,28 @@
-import axios from "axios";
+import React from "react";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Nab from "./components/Nab";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Service from "./pages/Service";
+import Contact from "./pages/Contact";
+import Conection from "./pages/Conection";
+import Footer from "./components/Footer";
 
-const App =()=>{
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('http://localhost:5000/home');
-      console.log(response.data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
-  const postData = async()=>{
-    try{
-      const response = await axios.post('http://localhost:5000/data',{name:"Rishabh",age:21});
-      console.log(response.data);
-    }
-    catch(error){
-      console.error('Error posting data:', error);
-    }
-  }
-
+function App (){
   return(
-    <>
-     <h1>Welcome to my App</h1>
-      <button onClick={fetchData}>Fetch Data from Backend</button>
-
-      <button onClick={postData}> Post Data</button>
-    </>
+    <Router>
+      <Nab />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/conection" element={<Conection />} />
+      </Routes>
+      <Footer />
+    </Router>
   )
+  
 }
 
 export default App;
