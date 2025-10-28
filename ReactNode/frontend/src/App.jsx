@@ -12,17 +12,17 @@ function App (){
   return(
     <Router>
       <Nab />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/conection" element={<Conection />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/conection" element={<Conection />} />
+        </Routes>
       <Footer />
     </Router>
   )
-  
+
 }
 
 export default App;
