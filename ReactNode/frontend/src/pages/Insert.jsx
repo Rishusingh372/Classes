@@ -1,37 +1,47 @@
 import React from 'react'
-import { use } from 'react'
 import { useState } from 'react'
-import axios from 'axios'
+import axios from 'axios' 
 
 const Insert = () => {
-  const [input,setInput]=useState({});
+    const [data , setdata] = useState({
+        id : "",
+        name : "",
+        location : "",
+        sub : "",
+        rollno : ""
+    })
+    const handlechange = (e)=>{
+        
+        const {name ,value} = e.target;
+        setdata((prev)=>({
+            ...prev,[name]:value
+        }))
+    }
+   
+    const handlesubmit = async (e)=>{
+          e.preventDefault();
+        const api = "http://localhost:5000/empoyees/home"
+        const response = await axios.post(api , data)
+        console.log(response)
+        console.log(data)
+    }
 
-  const handleInput=(e)=>{
-    const name=e.target.name;
-    const value=e.target.value;
-    setInput({...input,[name]:value});
-    // console.log(input);
-  }
 
-  const handleSubmit=async(e)=>{
-    e.preventDefault();
-    let api= "http://localhost:5000/empoyees/save";
-    let response= await axios.post(api,input);
-    console.log(response.data);
-  }
+
 
   return (
-    <>
-    <form>
-       Name <input type="text" id="fname" name="fname" onChange={handleInput()}/><br />
-       Email<input type="email" id="email" name="email" /><br />
-       Number<input type="number" id="number" name="number" /><br />
-        <input type="submit" value="Submit" onClick={handleSubmit()} />
+   <>
+    <h1>This is Insert Component</h1>
+    <h2>form for insert data</h2>
+    <form action="">
+        empoyee id : <input type="text" name='id' value={data.id} onChange={handlechange}  /> <br />
+        empoyee name : <input type="text" name='name' value={data.name} onChange={handlechange}  /> <br />
+        empoyee location : <input type="text" name='location' value={data.location} onChange={handlechange} /> <br />
+        empoyee inrollSub : <input type="text" name='sub' value={data.sub} onChange={handlechange} /> <br />
+        empoyee rollno : <input type="text" name='rollno' value={data.rollno} onChange={handlechange}  /> <br />
+        <button onClick={handlesubmit}>Save!!</button>
     </form>
-
-    </>
- 
-   
+   </>
   )
 }
 
