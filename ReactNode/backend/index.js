@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use('/empoyees',empController);
+app.use('/employees',empController);
 
 // Database connection
 mongoose.connect('mongodb://127.0.0.1:27017/collEmployee').then(()=>{

@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const home = (req,res) =>{
     const {id , name , location , sub } = req.body;
 
-    const stuData = new stuschema({
+    const stuData = new empschema({
         id : id,
         name : name,
         location : location,
@@ -22,13 +22,13 @@ const home = (req,res) =>{
 
 
 const getinfo =  async(req,res)=>{
-    const employeeData = await stuschema.find();
+    const employeeData = await empschema.find();
     res.send(employeeData)
 }
 
 const  editdata = async (req,res)=>{
     const id =  req.params.id;
-    const empdata = await stuschema.findById(id);
+    const empdata = await empschema.findById(id);
     console.log(empdata);
     res.send(empdata);
 }
@@ -36,22 +36,22 @@ const updatedata = async (req,res)=>{
     const data = req.body;
     const {id} = req.params;
     console.log(data)
-    const updatedata = await stuschema.findByIdAndUpdate(id , data );
+    const updatedata = await empschema.findByIdAndUpdate(id , data );
     res.send(updatedata);
 }
   
 const deletedata = async(req,res)=>{
     const id = req.params.id;
     console.log(id);
-    const deletedata = await stuschema.findByIdAndDelete(id);
-    const employeeData = await stuschema.find();
+    const deletedata = await empschema.findByIdAndDelete(id);
+    const employeeData = await empschema.find();
     res.send(employeeData);
 }
 
 const searchdata = async (req,res)=>{
     const {id} = req.body;
     
-    const data = await stuschema.find({id:id});
+    const data = await empschema.find({id:id});
     console.log(data);
     res.send(data);
 }

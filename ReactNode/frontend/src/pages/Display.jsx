@@ -11,7 +11,7 @@ const Display = () => {
 
 
   useEffect(() => {
-      const api = "http://localhost:5000/empoyees/empinfo"
+      const api = "http://localhost:5000/employees/empinfo"
       const response =  axios.get(api);
       response.then((res)=>{
         setempData(res.data);
@@ -23,7 +23,7 @@ const Display = () => {
   },[])
 
    const deletedata = async (id) =>{
-    const api = `http://localhost:5000/empoyees/delete/${id}`;
+    const api = `http://localhost:5000/employees/delete/${id}`;
     const response = await axios.delete(api);
     alert("data deleted successfully")
      setempData(response.data);
@@ -56,7 +56,7 @@ const Display = () => {
                       <td>{e.name}</td>
                       <td>{e.location}</td>
                       <td>{e.inrollsub}</td>
-                      <td> <Link to={`/update/${e._id}`}>Edit</Link> <Link><button onClick={()=>deletedata(e._id)}>delete</button></Link></td>
+                      <td> <Link to={`/update/${e._id}`}>Edit</Link> <button onClick={()=>deletedata(e._id)}>Delete</button></td>
                     </tr>
                   )
                   )

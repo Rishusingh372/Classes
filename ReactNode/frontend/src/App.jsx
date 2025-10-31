@@ -18,7 +18,7 @@ function App (){
           <Route path="/" element={<Home />} />
           <Route path="/Insert" element={<Insert />} />
           <Route path="/Display" element={<Display />} />
-          <Route path="/update" element={<Update />} />
+          <Route path="/update/:id" element={<Update />} />
           <Route path="/search" element={<Serach />} />
           <Route path="/conection" element={<Conection />} />
         </Routes>
