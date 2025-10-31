@@ -7,8 +7,7 @@ const Insert = () => {
         id : "",
         name : "",
         location : "",
-        sub : "",
-        rollno : ""
+        sub : ""
     })
     const handlechange = (e)=>{
         
@@ -27,8 +26,6 @@ const Insert = () => {
     }
 
 
-
-
   return (
    <>
     <h1>This is Insert Component</h1>
@@ -38,7 +35,6 @@ const Insert = () => {
         empoyee name : <input type="text" name='name' value={data.name} onChange={handlechange}  /> <br />
         empoyee location : <input type="text" name='location' value={data.location} onChange={handlechange} /> <br />
         empoyee inrollSub : <input type="text" name='sub' value={data.sub} onChange={handlechange} /> <br />
-        empoyee rollno : <input type="text" name='rollno' value={data.rollno} onChange={handlechange}  /> <br />
         <button onClick={handlesubmit}>Save!!</button>
     </form>
    </>
