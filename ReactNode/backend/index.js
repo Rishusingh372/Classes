@@ -3,13 +3,21 @@ const cors = require ('cors');
 const app = express ();
 const bodyParser = require('body-parser');
 const empController = require ('./routes/empRoutes');
+const mongoose = require("mongoose")
 
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-app.use (cors ());
 
 app.use('/empoyees',empController);
 
+// Database connection
+mongoose.connect('mongodb://127.0.0.1:27017/collEmployee').then(()=>{
+    console.log("database connection successfully")
+}).catch((err)=>{
+     console.log("data base connection error" , err);
+})
 
 app.listen (5000, () => {
   console.log ('Server is running on port 5000');
