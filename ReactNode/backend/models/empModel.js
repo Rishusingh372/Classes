@@ -4,6 +4,8 @@ const empSchema = new mongoose.Schema({
     id: Number,
     name: String,
     location: String,
-    sub: String,
-    rollno: Number
+    inrollsub: String
+
 });
+
+module.exports = mongoose.model('Employee', empSchema);

@@ -4,6 +4,11 @@ const empController = require('../controllers/empController');
 
 
 route.post("/home", empController.home);
+route.get("/empinfo" , empController.getinfo)
+route.get("/editdata/:id" , empController.editdata);
+route.put("/update/:id" , empController.updatedata);
+route.delete("/delete/:id" , empController.deletedata);
+route.post("/searchdata" , empController.searchdata)
 
 
 
