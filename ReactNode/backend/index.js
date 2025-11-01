@@ -4,6 +4,7 @@ const app = express ();
 const bodyParser = require('body-parser');
 const empController = require ('./routes/empRoutes');
 const mongoose = require("mongoose")
+require("dotenv").config();
 
 
 app.use(cors());
@@ -13,7 +14,7 @@ app.use(bodyParser.json());
 app.use('/employees',empController);
 
 // Database connection
-mongoose.connect('mongodb://127.0.0.1:27017/collEmployee').then(()=>{
+mongoose.connect(process.env.MongoDB_URI).then(()=>{
     console.log("database connection successfully")
 }).catch((err)=>{
      console.log("data base connection error" , err);
