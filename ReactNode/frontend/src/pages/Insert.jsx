@@ -19,7 +19,7 @@ const Insert = () => {
    
     const handlesubmit = async (e)=>{
           e.preventDefault();
-        const api = "http://localhost:5000/employees/home"
+        const api = `${import.meta.env.VITE_API_URL}/employees/home`
         const response = await axios.post(api , data)
         console.log(response)
         console.log(data)
