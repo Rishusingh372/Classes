@@ -13,6 +13,19 @@ app.use(bodyParser.json());
 
 app.use('/employees',empController);
 
+app.get("/service" , (req,res,next)=>{
+    console.log("Frist Service level middleware");
+    next();
+}, (req,res,next)=>{
+    console.log("SEcond service level middleware");
+    next();
+} , (req,res,next)=>{
+    console.log("Third service level middleware");
+    next();
+},  (req,res)=>{
+    res.send("This is Home Route");
+})
+
 // Database connection
 mongoose.connect(process.env.MongoDB_URI).then(()=>{
     console.log("database connection successfully")
