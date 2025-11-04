@@ -13,6 +13,11 @@ app.use(bodyParser.json());
 
 app.use('/employees',empController);
 
+// middleware example
+app.get("/home" , (req,res)=>{
+    res.send("This is Home Route");
+    console.log("Home route middleware");
+})
 app.get("/service" , (req,res,next)=>{
     console.log("Frist Service level middleware");
     next();
