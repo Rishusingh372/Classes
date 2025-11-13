@@ -1,9 +1,9 @@
-
 import {BrowserRouter , Routes, Route} from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
+import './css/style.css';
 const App=()=>{
   return(
     <>
@@ -22,4 +22,3 @@ const App=()=>{
   )
 }
 export default App;
-

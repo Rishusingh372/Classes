@@ -1,10 +1,11 @@
 import React from 'react'
+import '../css/style.css'
 
-const Hearder = () => {
+const Header = () => {
   return (
-    <>
-        <h1>Hearder Component</h1>
-    </>
+    <header className="header">
+        <h1>Header Component</h1>
+    </header>
   )
 }
 

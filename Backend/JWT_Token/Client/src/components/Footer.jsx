@@ -1,10 +1,11 @@
 import React from 'react'
+import '../css/style.css'
 
 const Footer = () => {
   return (
-  <>
-        <h1>Footer Component</h1>
-  </>
+  <footer className="footer">
+        <p>&copy; 2023 JWT Authentication App. All rights reserved.</p>
+  </footer>
   )
 }
 

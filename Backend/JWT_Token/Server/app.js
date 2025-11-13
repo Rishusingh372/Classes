@@ -1,9 +1,11 @@
 const express = require("express");
 const app=express();
-const EmpRoute = require("./routes/empRoute");
+const EmpRoute = require("./routers/empRoute");
 const cors= require("cors");
 const bodyparser = require('body-parser')
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+
 require("dotenv").config();
 // Body-parser middleware
 app.use(bodyparser.urlencoded({ extended: true }))

@@ -1,5 +1,5 @@
 const EmpModel = require("../models/empModel");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const empSave = async (req, res) => {

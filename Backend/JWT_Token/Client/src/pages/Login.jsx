@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import '../css/style.css';
 const Login=()=>{
     const [input, setInput] = useState({});
    const handleInput=(e)=>{
@@ -15,15 +16,20 @@ const Login=()=>{
       alert(response.data.msg);
    }
     return(
-        <>
+        <div className="login-container">
           <h1> Employee Login </h1>
-            Enter Email : <input type="text" name="email" onChange={handleInput} />
-          <br/>
-            Enter Password : <input type="text" name="password" onChange={handleInput} />
-          <br/>
-          
-          <button onClick={handleSubmit}>Save!!!</button>
-        </>
+          <form className="login-form">
+            <label>
+              Enter Email: <input type="email" name="email" onChange={handleInput} />
+            </label>
+            <br/>
+            <label>
+              Enter Password: <input type="password" name="password" onChange={handleInput} />
+            </label>
+            <br/>
+            <button type="button" onClick={handleSubmit}>Login</button>
+          </form>
+        </div>
      )
 }
 export default Login;
