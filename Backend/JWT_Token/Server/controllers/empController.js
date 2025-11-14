@@ -12,34 +12,59 @@ const empSave = async (req, res) => {
         password: passwordHash
     })
 
+
+
     res.send("You are Succesfully Registered!!")
+
 
 }
 
 const empLogin = async (req, res) => {
     const { email, password } = req.body;
+    try {
+        const user = await EmpModel.findOne({ email: email });
+        if (!user) {
+            res.status(401).send({ msg: "Invalid Email" });
+        }
 
-    const user = await EmpModel.findOne({ email: email });
-    if (!user) {
-        res.status(401).send({ msg: "Invalid Email" });
+        const passwordMatch = await bcrypt.compare(password, user.password);
+        console.log(passwordMatch);
+        if (!passwordMatch) {
+            res.status(401).send({ msg: "Invalid Password" });
+        }
+
+
+        const token = jwt.sign({ id: user._id }, "adarsh111", {
+            expiresIn: 3 * 24 * 60 * 60,
+        });
+
+        console.log(token);
+        res.send({ token: token, msg: "You are succesfully Login" });
+    } catch (error) {
+        console.log("error in emplogin", error)
     }
 
-    const passwordMatch = await bcrypt.compare(password, user.password);
-    console.log(passwordMatch);
-    if (!passwordMatch) {
-        res.status(401).send({ msg: "Invalid Password" });
-    }
 
-
-    const token = jwt.sign({ id: user._id }, "rishu111", {
-        expiresIn: 3 * 24 * 60 * 60,
-    });
-
-    console.log(token);
-    res.send({ token: token, msg: "You are succesfully Login" });
 }
+
+const empAuth = async (req, res) => {
+    try {
+        const token = req.header("auth_token")
+        const decode = jwt.verify(token, "adarsh111");
+        const user = await EmpModel.findById(decode.id);
+        console.log(user);
+        res.status(200).send(user)
+    } catch (error) {
+        res.status(401).send("error in empAuth")
+    }
+}
+
+
+
+
 
 module.exports = {
     empSave,
-    empLogin
+    empLogin,
+    empAuth
 }

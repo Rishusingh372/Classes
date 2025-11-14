@@ -3,7 +3,9 @@ import Layout from "./Layout";
 import Home from "./pages/Home";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
-import './css/style.css';
+import Dashboard from "./pages/Dashboard";
+import "./css/style.css"
+
 const App=()=>{
   return(
     <>
@@ -16,8 +18,12 @@ const App=()=>{
           <Route path="login" element={<Login/>}/>
           </Route>
          </Routes>
-       </BrowserRouter>
 
+         <Routes>
+          <Route path="dashboard" element={<Dashboard/>}>
+          </Route>
+         </Routes>
+       </BrowserRouter>
     </>
   )
 }
