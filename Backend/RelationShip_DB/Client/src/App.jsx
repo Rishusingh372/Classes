@@ -3,7 +3,7 @@ import Layout from "./Layout";
 import Home from "./pages/Home";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import Display from "./pages/Display";
 import "./css/style.css"
 
 const App=()=>{
@@ -16,13 +16,14 @@ const App=()=>{
           <Route path="home" element={<Home/>} /> 
           <Route path="registration" element={<Registration/>}/>   
           <Route path="login" element={<Login/>}/>
+           <Route path="display2" element={<Display/>}/>
           </Route>
          </Routes>
 
-         <Routes>
+         {/* <Routes>
           <Route path="dashboard" element={<Dashboard/>}>
           </Route>
-         </Routes>
+         </Routes> */}
        </BrowserRouter>
     </>
   )
