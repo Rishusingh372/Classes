@@ -4,7 +4,9 @@ const cors= require("cors");
 const bodyparser = require('body-parser')
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const multer  = require('multer')
+const multer = require("multer");
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require("./cloudinary");
 
 require("dotenv").config();
 // Body-parser middleware
@@ -17,21 +19,49 @@ app.use(cors());
 
 
 
-// configure multer storage
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'uploads/')
-    },
-    filename: function (req, file, cb) {
-      cb(null, Date.now() + '-' + file.originalname)
-    }
-})
-const upload = multer({ storage: storage });
+// // configure multer storage
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, 'uploads/')
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, Date.now() + '-' + file.originalname)
+//     }
+// })
+// const upload = multer({ storage: storage });
 
-// Route to handle file upload
-app.post('/upload', upload.single('file'), (req, res) => {
-    res.send('File uploaded successfully');
+// // Route to handle file upload
+// app.post('/upload', upload.single('file'), (req, res) => {
+//     res.send('File uploaded successfully');
+// });
+
+
+// Set up Cloudinary storage for multer
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: 'product_images', // folder name Cloudinary account
+        format: async (req, file) => 'jpg', // supports promises as well
+        public_id: (req, file) => Date.now() + '-' + file.originalname,
+    },
 });
+
+const upload = multer({ storage: storage }).array('images', 10); //image size
+
+app.post("/upload",  (req, res)=>{
+
+          upload(req, res, async (err) => {
+        if (err) {
+            return res.status(500).send("Error uploading files: " + err.message);
+        }
+         console.log(req.body);
+         console.log(req.files);
+         const imagePath = req.files.map(key=>key.path);
+         console.log(imagePath);
+
+}) ;
+     res.send("File Uploaded!!!");
+})
 
 
 
