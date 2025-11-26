@@ -7,6 +7,7 @@ const bcrypt = require("bcrypt");
 const multer = require("multer");
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary = require("./cloudinary");
+const StuModel = require("./models/studentModel");
 
 require("dotenv").config();
 // Body-parser middleware
@@ -37,6 +38,7 @@ app.use(cors());
 
 
 // Set up Cloudinary storage for multer
+// Set up Cloudinary storage for multer
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
@@ -46,21 +48,38 @@ const storage = new CloudinaryStorage({
     },
 });
 
+
 const upload = multer({ storage: storage }).array('images', 10); //image size
 
-app.post("/upload",  (req, res)=>{
 
-          upload(req, res, async (err) => {
+
+app.post("/upload", (req, res) => {
+
+    upload(req, res, async (err) => {
         if (err) {
             return res.status(500).send("Error uploading files: " + err.message);
         }
-         console.log(req.body);
-         console.log(req.files);
-         const imagePath = req.files.map(key=>key.path);
-         console.log(imagePath);
 
-}) ;
-     res.send("File Uploaded!!!");
+        const { rollno, name, address } = req.body;
+        console.log(req.body);
+        console.log(req.files);
+        const imagePath = req.files.map(key => key.path);
+        console.log(imagePath);
+
+        const student = await StuModel.create({
+            rollno: rollno,
+            name: name,
+            address: address,
+            defaultImage: imagePath[0],
+            images:imagePath
+         });
+        console.log(student);
+    });
+    res.send("File Uploaded!!!");
+})
+app.get("/display", async(req, res)=>{  
+    const student = await StuModel.find();
+    res.send(student);
 })
 
 
