@@ -1,0 +1,8 @@
+PS C:\Users\rishu\OneDrive\Desktop\cpp\Backend\Stream> cd server
+PS C:\Users\rishu\OneDrive\Desktop\cpp\Backend\Stream\server> node app
+Error reading the file: [Error: ENOENT: no such file or directory, open 'C:\Users\rishu\OneDrive\Desktop\cpp\Backend\Stream\server\input.txt'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\rishu\\OneDrive\\Desktop\\cpp\\Backend\\Stream\\server\\input.txt'
+}

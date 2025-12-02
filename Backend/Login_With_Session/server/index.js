@@ -4,14 +4,14 @@ import session from 'express-session';
 import bcrypt from 'bcryptjs';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import userRouter from './routes/userRouter.js'; // Add this line
+import userRouter from './routers/userRouter.js'; // Add this line
 
 dotenv.config();
 const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: true,
   credentials: true,
 }));
 
