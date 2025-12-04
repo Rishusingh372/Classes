@@ -1,0 +1,35 @@
+const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
+const cors = require('cors');
+const app = express();
+const server = http.createServer(app);
+
+app.use(cors());
+
+// Socket.io server setup
+const io = new Server(server,{
+    cors: {
+        origin: "http://localhost:5174", // React app URL
+        methods: ["GET", "POST"]
+    }
+})
+
+// on :- event listener
+// emit :- event emitter(to send data ,( Fire event))
+
+io.on('connection',(socket)=>{
+    console.log(`User connected: ${socket.id}`);
+    socket.on('send_message',(data)=>{
+        console.log(data);
+        // Broadcast the message to all other clients except the sender
+        socket.broadcast.emit('receive_message',data);
+    });
+    socket.on('disconnect',()=>{
+        console.log(`User disconnected: ${socket.id}`);
+    });
+});
+
+server.listen(3001,()=>{
+    console.log('Server is running on port 3001');
+});
