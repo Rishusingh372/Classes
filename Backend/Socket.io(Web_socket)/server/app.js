@@ -3,18 +3,18 @@ const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 const app = express();
+
+// server setup
 const server = http.createServer(app);
 
 app.use(cors());
-
 // Socket.io server setup
 const io = new Server(server,{
     cors: {
-        origin: "http://localhost:5174", // React app URL
+        origin: "http://localhost:5173", // React app URL
         methods: ["GET", "POST"]
     }
-})
-
+});
 // on :- event listener
 // emit :- event emitter(to send data ,( Fire event))
 
@@ -23,7 +23,9 @@ io.on('connection',(socket)=>{
     socket.on('send_message',(data)=>{
         console.log(data);
         // Broadcast the message to all other clients except the sender
-        socket.broadcast.emit('receive_message',data);
+        // socket.broadcast.emit('receive_message',data);// to send message to all clients except sender(Single)
+        
+        io.emit('receive_message',data); // to send message to all clients including sender
     });
     socket.on('disconnect',()=>{
         console.log(`User disconnected: ${socket.id}`);
