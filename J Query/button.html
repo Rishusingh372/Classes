@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* #demo {
+        width: 300px;
+        height: 100px;
+        background-color: lightgrey;
+        border: 1px solid black;
+        margin-top: 10px;
+    }
+     #demo1 {
+        width: 300px;
+        height: 100px;
+        background-color: lightgrey;
+        border: 1px solid black;
+        margin-top: 10px;
+    } */
+     #demo2 {
+        width: 300px;
+        height: 400px;
+        background-color: lightgrey;
+        border: 1px solid black;
+        margin-top: 10px;
+    }
+</style>
+<script src="jquery.js"></script>
+<script>
+//     $(document).ready(function() {
+//         // Task 1: Hide h1 on button click
+//         $("#btn1").click(function() {
+//             $("h1").hide(4000);
+//         });
+
+//         // Task 2: Show h1 on button click
+//         $("#btn2").click(function() {
+//             $("h1").show(4000);
+//         });
+//     });
+
+// //   Task 4: Change input background color on focus and blur
+//     $(document).ready(function() {
+//         $("input").focus(function() {
+//             $(this).css("background-color", "lightblue");
+//         });
+
+//         $("input").blur(function() {
+//             $(this).css("background-color", "white");
+//         });
+//     });
+
+
+//  // Toggle Example
+//     $(document).ready(function() {
+//         $("#toggleBtn").click(function() {
+//             $("#demo").toggle(1000);
+//         });
+//     });
+
+//     // SlideUp, SlideDown, SlideToggle Example
+//     $(document).ready(function() {
+//         $("#slideBtn").click(function() {
+//             $("#demo1").slideToggle(1000);
+//         });
+//     });
+
+    // FadeIn, FadeOut, FadeToggle Example
+    $(document).ready(function() {
+        $("#fadeBtn").click(function() {
+            $("#demo2").fadeToggle(1000);
+        });
+    });
+
+
+
+</script>
+<body>
+
+    <h1>Welcome to cybrom bhopal</h1>
+    <button id="btn1">Hide Click</button>
+    <button id="btn2">Show Click</button>
+   
+
+    <h5>Hide or focuse</h5>
+
+    enter your name<input type="text"  >
+    enter your age<input type="text" >
+    entrr your city<input type="text" >
+
+
+     <!-- Toggle example -->
+    <h3>Toggle Example</h3>
+    <button id="toggleBtn">Toggle Paragraph</button>
+    <div id="demo"></div>
+
+    <!-- Sldeup , slideDown , slidetoggle -->
+     <h4>Example of slidetoggle , slideDown , slideup</h4>
+    <button id="slideBtn">Toggle Paragraph</button>
+    <div id="demo1"></div> 
+
+    <!-- fadeIn , Fadeout , fadeToggle -->
+    
+    <div id="demo2">
+        <img src="download.jpg" alt="img">
+    </div>
+    <button id="fadeBtn">Toggle Paragraph</button>
+
+
+    <!-- animated div -->
+     <button></button>
+    <div style="width:100px;height:100px;position:absolute;background-color:red;" id="mydiv">
+
+    </div>
+
+
+    
+</body>
+</html>
