@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- promise -->
+    <!-- promise is a js object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+     there are 3 stetes of promise:-
+     1.pending
+     2.fulfilled
+     3.rejected
+
+     there are 3 result of promise:-
+     1.undefined :- initial state, not fulfilled or rejected.
+     2.value :- operation completed successfully.
+     3.reason :- operation failed.
+     
+    1. State 
+      .  pending :-- Initially when the executor function starts the execution.
+      .   fulfilled :--  When the Promise is resolved .
+      .  rejected :-- When the Promse is rejected .
+
+   2. Result 
+     .  undefined :-- Initially when the state value is pending
+     . value :--   When resolve(value) is called .
+     . error :--   When rejected(value) is called.
+
+     
+     -->
+
+    <script>
+        // let promise = new Promise(function (resolve, reject) {
+        //     let goodDeveloper = true;
+
+        //     if (goodDeveloper) {
+        //         setTimeout(() => {
+        //             resolve("Like Rajesh Sir Classes!")
+        //         });
+        //     }
+        //     else {
+        //         reject("You not Attend Rajesh Sir Class Yet!");
+        //     }
+        // });
+
+        // console.log(promise);
+
+        let promise = new Promise(function (resolve, reject) {
+            let goodDeveloper = false;
+
+            if (goodDeveloper) {
+                setTimeout(() => {
+                    resolve("Like Rajesh Sir Classes!")
+                });
+
+            }
+            else {
+                reject("You not Attend Rajesh Sir Class Yet!");
+            }
+        });
+
+        console.log(promise);
+
+        promise.then((res) => {
+            console.log(res)
+        }).catch(console.error());
+    </script>
+
+
+
+</body>
+
+</html>
