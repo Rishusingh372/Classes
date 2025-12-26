@@ -4,6 +4,7 @@ const store = configureStore({
     reducer:{
          todo:myReducer
     }
+    
 })
 
 export default store;
