@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Closer funtion -->
+    <!-- closer funtion is a funtion that allow a funtion to have access to the outer funtion scope even after the outer funtion has closed. -->
+
+
+    <script>
+
+        // function fun1 (){
+        //     let a=5;
+        //     console.log("outer funtion", a);
+
+        // }
+        // fun1();
+
+
+        // function fun1 (){
+        //     let a=5;
+        //     console.log("outer funtion", a);
+        //     function fun2(){
+        //         let b=10;
+        //         console.log("inner funtion", a+b);
+        //     }
+        //     fun2();
+        // }
+        // fun1();
+
+        // Exp 2 :--
+
+        // function fun1() {
+        //     let a = 5;
+        //     console.log(a);
+        //     function fun2() {
+        //         let a = 6;
+        //         console.log(a);
+        //     }
+        //     fun2();
+        // }
+
+        // fun1();
+
+        // Exp 3 :--
+
+        // function fun1() {
+        //     let a = 5;
+        //     console.log(a);
+
+        //     function fun2() {
+        //         console.log(a);
+        //     }
+        //     return fun2;
+        // }
+        // const abc = fun1();
+        // abc();
+
+
+        // #Exp  4 : --
+
+        //     function fun1() {
+        //         let a = 5;
+
+        //         function fun2() {
+
+        //             console.log(a);
+        //         }
+
+        //         return fun2;
+        //     }
+
+        // const abc = fun1();
+        // abc();
+
+        // #Exp 5 :--
+        // function fun1() {
+        //     let a = 5;
+
+        //     function fun2() {
+
+        //         console.log(a);
+        //     }
+        //     a = 8;
+        //     return fun2;
+        // }
+        // const abc = fun1();
+        // abc();
+
+        // // #Exp 6 :--
+        // function counter() {
+
+        //     // Private variable
+        //     let count = 0;
+
+        //     return function () {
+
+        //         // Access and modify the private variable
+        //         count++;
+        //         return count;
+        //     };
+        // }
+
+        // const increment = counter();
+        // console.log(increment());
+        // console.log(increment());
+        // console.log(increment());
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
